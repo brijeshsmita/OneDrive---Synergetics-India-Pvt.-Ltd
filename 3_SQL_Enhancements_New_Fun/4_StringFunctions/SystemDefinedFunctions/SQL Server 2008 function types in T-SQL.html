@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL -->
+<html class="gt-ie8 js no-touch csstransforms csstransforms3d csstransitions mti-inactive" dir="ltr" lang="en" prefix="og: http://ogp.me/ns#" itemscope="" itemtype="http://schema.org/Article" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./SQL Server 2008 function types in T-SQL_files/ads"></script><script src="./SQL Server 2008 function types in T-SQL_files/ads(1)"></script><script src="./SQL Server 2008 function types in T-SQL_files/ads(2)"></script><script src="./SQL Server 2008 function types in T-SQL_files/ads(3)"></script><script type="text/javascript" async="" src="./SQL Server 2008 function types in T-SQL_files/linkid.js.download"></script><script type="text/javascript" async="" src="./SQL Server 2008 function types in T-SQL_files/analytics.js.download"></script><script async="" type="text/javascript" src="./SQL Server 2008 function types in T-SQL_files/gpt.js.download"></script><script src="./SQL Server 2008 function types in T-SQL_files/ca-pub-6050985421795229.js.download"></script><script src="./SQL Server 2008 function types in T-SQL_files/7034.js.download" async="" type="text/javascript"></script><script async="" src="./SQL Server 2008 function types in T-SQL_files/gtm.js.download"></script><script type="text/javascript" async="" src="./SQL Server 2008 function types in T-SQL_files/geo2.js.download"></script><script type="text/javascript" async="" src="./SQL Server 2008 function types in T-SQL_files/geo2.js.download"></script>
+	
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<title>SQL Server 2008 function types in T-SQL</title>
+			<meta name="viewport" content="width=device-width,initial-scale=1">
+			<meta name="description" content="Transact-SQL functions can be aggregate or scalar functions. In this beginner&#39;s guide to SQL Server 2008, learn about these and the many numeric functions.">
+			<meta name="robots" content="noodp">
+			<link rel="canonical" href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL">
+			<meta property="og:title" content="SQL Server 2008 function types in T-SQL">
+			<meta property="og:site_name" content="SearchSQLServer">
+			<meta property="og:url" content="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL">
+			<meta property="og:description" content="Transact-SQL functions can be aggregate or scalar functions. In this beginner&#39;s guide to SQL Server 2008, learn about these and the many numeric functions.">
+			<meta property="fb:app_id" content="870327132989388">
+			<meta property="og:type" content="article">
+			<meta property="og:locale" content="en_US">
+			<meta property="article:publisher" content="https://www.facebook.com/businessinformationmagazine/200402560107445">
+			<meta itemprop="name" content="SQL Server 2008 function types in T-SQL">
+			<meta itemprop="description" content="Transact-SQL functions can be aggregate or scalar functions. In this beginner&#39;s guide to SQL Server 2008, learn about these and the many numeric functions.">
+			<meta name="twitter:card" content="summary_large_image">
+			<meta name="twitter:site" content="@searchsqlserver">
+			<meta name="twitter:title" content="SQL Server 2008 function types in T-SQL">
+			<meta name="twitter:description" content="Transact-SQL functions can be aggregate or scalar functions. In this beginner&#39;s guide to SQL Server 2008, learn about these and the many numeric functions.">
+			<meta property="og:image" content="http://cdn.ttgtmedia.com/ITKE/images/logos/TTlogo-379x201.png">
+			<meta itemprop="image" content="http://cdn.ttgtmedia.com/ITKE/images/logos/TTlogo-379x201.png">
+			<link rel="alternate" type="application/rss+xml" title="SearchSQLServer: ContentSyndication" href="http://searchsqlserver.techtarget.com/rss/ContentSyndication.xml">
+			<script src="./SQL Server 2008 function types in T-SQL_files/jquery.min.js.download"></script><style type="text/css" id="mti_stylesheet_124d48dd-e515-4302-8bfb-1d5c1e3da916">.mti_hide_element{visibility:hidden;}</style><script src="./SQL Server 2008 function types in T-SQL_files/124d48dd-e515-4302-8bfb-1d5c1e3da916.js.download"></script><link rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/normalize.css"><link rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/icomoon.css"><link rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/jquery.jscrollpane.css"><link rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/jquery-ui-1.10.3.custom.min.css"><link rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/responsive-carousel.css"><link rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/responsive-carousel.slide.css"><link rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/mediaelementplayer.min.css"><link rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/v8-legacy.css"><link rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/main.css"><!--[if IE 9]>
+<link rel="stylesheet" href="http://cdn.ttgtmedia.com/rms/ux/responsive/css/main_2.css?v=6.74"><link rel="stylesheet" href="http://cdn.ttgtmedia.com/rms/ux/responsive/css/main_3.css?v=6.74"><![endif]-->
+<script src="./SQL Server 2008 function types in T-SQL_files/responsive.min.js.download"></script><script src="./SQL Server 2008 function types in T-SQL_files/148927072.js.download"></script><script>
+TT("page", {"clusterName":["SQLPerf"],"parentTopicName":"Microsoft SQL Server Administration","parentTopicId":"301324","regHost":"http://users.techtarget.com","adScheme":"1","gaSiteAcct":"UA-18475716-1","lang":"en","ga":true,"timestamp":"2017-08-09 08:00:47","adId":"1327000","regTopicName":"Database Performance","siteName":"searchSQLServer","regTopicId":"1175300","topicName":"Microsoft SQL Server Performance Monitoring and Tuning","pubDate":"20081015","adAbbr":"sqlsrv","siteType":"editorial","uaid":"UA-18475716-1","topical":true,"gaPageTrackUrl":"/page/etpk_Microsoft SQL Server Administration-301324/ptpk_Microsoft SQL Server Performance Monitoring and Tuning-301334/true/FEATURE/content/cid_1327000/date_20081015/mem_55/rtpk_Database Performance-1175300/idx_0","membersOnly":true,"pageIndex":0,"topicIds":["301334","308349"],"siteId":87,"atHost":"http://go.techtarget.com","appCode":"55","topicId":"301334","clusterId":["2240016845"],"homeAdId":"2240013389","zone":"FEATURE"});
+</script>
+
+<!-- Begin Chartbeat -->
+		<script>var _sf_startpt=(new Date()).getTime();</script><!-- End Chartbeat -->
+	<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><link rel="shortcut icon" type="image/x-icon" href="http://searchsqlserver.techtarget.com/favicon.ico">
+	<link rel="apple-touch-icon" sizes="144×144" href="http://searchsqlserver.techtarget.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="114×114" href="http://searchsqlserver.techtarget.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72×72" href="http://searchsqlserver.techtarget.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" href="http://searchsqlserver.techtarget.com/apple-touch-icon-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144×144" href="http://searchsqlserver.techtarget.com/apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114×114" href="http://searchsqlserver.techtarget.com/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72×72" href="http://searchsqlserver.techtarget.com/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="http://searchsqlserver.techtarget.com/apple-touch-icon-precomposed.png"><style type="text/css" id="mti_fontface_124d48dd-e515-4302-8bfb-1d5c1e3da916">@font-face{
+font-family:"Abril W01 Text Bold";
+src:url("http://fast.fonts.net/dv2/14/c3906f84-ef46-4577-a18f-86b08c5d9b60.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"Abril W01 Display Bold";
+src:url("http://fast.fonts.net/dv2/14/143fbd40-816c-4d33-bb86-f38d44fdec1f.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NeueHaasGroteskText W01";
+src:url("http://fast.fonts.net/dv2/14/a14594bf-73de-4b5f-9792-9566994a021d.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskTXW01-56It";
+src:url("http://fast.fonts.net/dv2/14/dc9df9ed-36b9-4522-8e57-1a899ed2c224.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskTXW01-65Md";
+src:url("http://fast.fonts.net/dv2/14/34ae0cd2-c49c-4df4-8270-fcda21c1b715.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskTXW01-66MdI";
+src:url("http://fast.fonts.net/dv2/14/c951fbb4-1116-47e5-b057-5691a20747eb.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskTXW01-75Bd";
+src:url("http://fast.fonts.net/dv2/14/d13fb250-6b64-4d97-85df-51fc6625a891.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskTXW01-76BdI";
+src:url("http://fast.fonts.net/dv2/14/d1fbf511-d681-4002-b57e-cabb331b3b2e.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-15Ult";
+src:url("http://fast.fonts.net/dv2/14/cadd8f54-ba24-4ca4-9206-191ed9a6dbf2.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-16Ult";
+src:url("http://fast.fonts.net/dv2/14/ecc21933-8ca6-4f52-8d5d-15f4233e042f.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-25Th";
+src:url("http://fast.fonts.net/dv2/14/ca6a839e-112e-49a1-b98d-ff71960f48f8.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-26ThI";
+src:url("http://fast.fonts.net/dv2/14/8d452ea7-084c-40e7-8751-9a854256f900.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-35XLt";
+src:url("http://fast.fonts.net/dv2/14/2d3ed639-f5d6-489d-9792-c18f0b3a58d6.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-36XLt";
+src:url("http://fast.fonts.net/dv2/14/d61d8213-a0eb-4fa4-a533-2758990f6121.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-45Lt";
+src:url("http://fast.fonts.net/dv2/14/fcd607c0-74ab-4cb5-90c3-db118b1ad287.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-46LtI";
+src:url("http://fast.fonts.net/dv2/14/5a2559cb-b252-4f39-b9e2-2e2c77a049aa.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NeueHaasGroteskDisp W01";
+src:url("http://fast.fonts.net/dv2/14/1d2142cb-3e68-48df-b188-f1ac45a47a8b.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-56It";
+src:url("http://fast.fonts.net/dv2/14/a28c06ea-8829-467a-a7be-4ffdfba4247b.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-65Md";
+src:url("http://fast.fonts.net/dv2/14/75e1af8f-1a4c-475a-8b53-f27e52822b6b.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-66MdI";
+src:url("http://fast.fonts.net/dv2/14/57974581-bbc7-4288-9512-600df67cfe32.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-75Bd";
+src:url("http://fast.fonts.net/dv2/14/c24b7456-b9fe-40ab-94af-ba8d3025fada.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-76BdI";
+src:url("http://fast.fonts.net/dv2/14/e050deac-c053-470f-a815-635994435764.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-95Blk";
+src:url("http://fast.fonts.net/dv2/14/f53e5775-ed10-4b0d-bae1-efc8fb73f320.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"NHaasGroteskDSW01-96Blk";
+src:url("http://fast.fonts.net/dv2/14/baf627c2-ef72-493e-93cc-a8da9a1106a4.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+@font-face{
+font-family:"Museo W01 300";
+src:url("http://fast.fonts.net/dv2/14/d9dabe05-624c-4f28-8eee-b3b6f1841abf.woff2?d44f19a684109620e4841670a690e81897f9082d3667871da91bf3bdb9a14b2e144229410f6664fb0af392716d5e0f7dade11506eeb4533c4d07fa6f4bb847d5c9131dacf48596fa4e0311c570d6a4156a3a1d6a52d552442a0e19e1006e8c3055321506dc4f722bae126579cedfce701a907d24b70dfb132406837d21391edd5160fc20b90167e08dbafaa921ca5425311774ec8bbf4d2f70b59065b5b509635e583a56f41dc1d31accef65f6ef8ffe512ee49e9b5b4ff31fce8771a2c22b01424349db023cf667d30282413959fde6d73bfa4263f2ca9952be3cb3bd294c87d81a7a7403bd0e3f74da6ac8969da322294daa63d640a2842f870389158e1918710fdfad9c35147f3424b639df2d572254422c9909e177194e41e7237e7a227d382c21&projectId=124d48dd-e515-4302-8bfb-1d5c1e3da916") format('woff2');}
+</style>
+
+	<link id="MonoTypeFontApiFontTracker" type="text/css" rel="stylesheet" href="./SQL Server 2008 function types in T-SQL_files/1.css"><script type="text/javascript" async="" src="./SQL Server 2008 function types in T-SQL_files/dpm_b4c96d80854dd27e76d8cc9e21960eebda52e962.min.js.download"></script><script src="./SQL Server 2008 function types in T-SQL_files/advertisement.js.download"></script><script src="./SQL Server 2008 function types in T-SQL_files/pubads_impl_141.js.download" async=""></script></head>
+<body id="news" class="reg-login header-desktop-fixed" style="">
+	<!-- Begin Google Tag Manager -->
+		<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-PWWZSH" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PWWZSH');</script><!-- End Google Tag Manager -->
+	<div id="site-container" class="site-container">
+		<div><div><!-- PinnedNavBarController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<!-- AdsController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<div id="interstitial" class="ad ad-ist"><script>GPT.display('interstitial')</script></div><div class="ad-wrapper header-leaderboard ad-mobile" style="position: inherit; z-index: 99; margin: 0px auto; width: 100%; background-color: rgb(241, 241, 241); top: auto;">
+	<!-- AdsController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<div id="mobile-lb" class="ad ad-mb"><script>GPT.display('mobile-lb')</script></div></div>
+<header class="header header_v2 en" id="page-header" style="top: 0px;">
+	<button class="nav-toggle" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><i class="icon" data-icon="9"></i></button>
+	<a href="http://www.techtarget.com/network" class="header-logo mobile-link" style="">
+		<span class="header-logo-mobile">SearchSQLServer</span>
+	</a>
+	<a href="http://searchsqlserver.techtarget.com/" class="header-logo desktop-link">
+		<img src="./SQL Server 2008 function types in T-SQL_files/nav_logo.png" alt="TechTarget" class="header-logo-desktop replace_2x">
+		<img src="./SQL Server 2008 function types in T-SQL_files/nav_logo.png" alt="TechTarget" class="header-logo-small replace_2x" style="">
+	</a> 
+	<button class="header-search-toggle" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none; width: 666px;"><i class="icon" data-icon="g"></i></button>
+	<form action="http://www.techtarget.com/search/query" method="get" class="header-search" style="width: 609px;">
+		<label for="header-search-input" class="visuallyhidden">Search the TechTarget Network</label>
+		<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input class="header-search-input ui-autocomplete-input" id="header-search-input" autocomplete="off" type="text" name="q" placeholder="Search the TechTarget Network">
+		<button class="header-search-submit"><i class="icon" data-icon="g"></i></button>
+	<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul></form>
+			
+	<nav class="nav">
+		<a href="http://users.techtarget.com/registration/searchSQLServer/LoginRegister.page?fromURL=http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL" class="nav-join-pro"><span>Sign-up now. Start my free, unlimited access.</span></a>
+					
+		<div class="nav-user">
+		<a href="http://users.techtarget.com/registration/searchSQLServer/LoginRegister.page?fromURL=http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL"><span class="nav-user-action">Login</span></a>
+			<a href="http://users.techtarget.com/registration/searchSQLServer/Register.page" class="register"><span class="nav-user-action">Register</span></a>
+			</div>
+		<script>TT(["context","lib/jquery"],function(c,$){var u=c.getUser();if(u.loggedIn){$('div.nav-user').children("a:first")
+			.before('<i class="icon header_logged_in_icon" title="'+u.displayName+'"></i>')
+			.attr("href", "http://users.techtarget.com/registration/searchSQLServer/Logout.page?fromURL=" + window.location.href).children("span.nav-user-action:first").text('Logout');
+			$('.register').removeAttr('href');$('a.register').hide();}else{$('div.nav-user').children("a:first").attr("href", "http://users.techtarget.com/registration/searchSQLServer/LoginRegister.page?fromURL="+window.location.href);
+			$('a.nav-join-pro').attr("href", "http://users.techtarget.com/registration/searchSQLServer/LoginRegister.page?fromURL="+window.location.href);}});
+
+		</script>
+
+		<div class="nav-links">
+				<ul>
+					<li id="nav-links-TechtargetNetwork"><a href="http://www.techtarget.com/network">Techtarget Network</a></li>
+					<li id="nav-links-News"><a href="http://searchsqlserver.techtarget.com/info/news">News</a></li>
+					<li id="nav-links-Features"><a href="http://searchsqlserver.techtarget.com/features">Features</a></li>
+					<li id="nav-links-Tips"><a href="http://searchsqlserver.techtarget.com/tips">Tips</a></li>
+					<li class="more-content">
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">More Content<i class="icon icon-arrow-down" data-icon="5"></i></a>
+						<div class="more-content-dropdown">
+							<ul class="nav-list-sublist">
+							<li id="nav-links-Answers"><a href="http://searchsqlserver.techtarget.com/answers">Answers</a></li>
+							<li id="nav-links-Buyer&#39;sGuides"><a href="http://whatis.techtarget.com/resources/Buyers-Guides">Buyer's Guides</a></li>
+							<li id="nav-links-EssentialGuides"><a href="http://searchsqlserver.techtarget.com/guides">Essential Guides</a></li>
+							<li id="nav-links-Opinions"><a href="http://searchsqlserver.techtarget.com/opinions">Opinions</a></li>
+							<li id="nav-links-PhotoStories"><a href="http://searchsqlserver.techtarget.com/photostories">Photo Stories</a></li>
+							<li id="nav-links-Podcasts"><a href="http://searchsqlserver.techtarget.com/podcasts">Podcasts</a></li>
+							<li id="nav-links-Quizzes"><a href="http://searchsqlserver.techtarget.com/quizzes">Quizzes</a></li>
+							<li id="nav-links-Tutorials"><a href="http://searchsqlserver.techtarget.com/tutorials">Tutorials</a></li>
+							<li class="nav-links-sponsoredcommunities">
+									<a href="http://searchsqlserver.techtarget.com/sponsored_communities">Sponsored Communities</a>
+								</li>
+							</ul>
+						</div>
+						</li>
+					</ul>
+			</div>
+		<ul class="nav-list">
+			<li class="nav-list-item nav-list-item-searchsites">
+				
+				<div class="nav-list-item-header searchsqlserver">
+					<a href="http://searchsqlserver.techtarget.com/">
+						<span class="nav-list-item-header-title">
+							<span class="logo-search">Search</span><span class="logo-1">SQL</span><span class="logo-2">Server</span></span>
+					</a>
+				</div>
+			</li>
+			<li class="nav-list-item nav-list-item-topics">
+					<div class="nav-list-item-header">
+						<span class="nav-list-item-header-type">Topic</span> <span class="nav-list-item-header-title"> <a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Administration">
+								SQL Server Administration</a>
+						</span> <i class="icon icon-arrow-down" data-icon="5"></i> <i class="icon icon-navigation-detail" data-icon="A"></i>
+					</div>
+					<div class="nav-list-item-dropdown">
+						<div class="nav-list-item-jscroll">
+							<ul class="nav-list-sublist">
+									<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Database-Development"> SQL Server Development</a></li>
+									<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Management-Issues"> SQL Server Management Issues</a></li>
+									<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Platforms"> SQL Server Platforms</a></li>
+									<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/SQL-Server-Business-Intelligence-BI-and-Data-Warehousing"> BI and Data Warehousing</a></li>
+									<li class="nav-list-sublist-item view-all"><a href="http://searchsqlserver.techtarget.com/resources">All Topics</a></li>
+								</ul>
+							</div>
+					</div>
+			</li><li class="nav-list-item nav-list-item-sections">
+					<div class="nav-list-item-header">
+						<span class="nav-list-item-header-type">SubTopic</span> <i class="icon icon-arrow-down" data-icon="5"></i> <i class="icon icon-navigation-arrow" data-icon="B"></i> <span class="nav-list-item-header-title"> <a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Performance-Monitoring-and-Tuning"> Performance Tuning</a>
+								</span>
+					</div>
+					<div class="nav-list-sublist nav-list-item-dropdown">
+						<ul class="nav-list-item-jscroll">
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Installation"> Installation</a></li>
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Performance-Monitoring-and-Tuning"> Performance Tuning</a></li>
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Tools-and-Utilities"> Tools and Utilities</a></li>
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/SQL-Server-Backup-and-Recovery"> Backup and Recovery</a></li>
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/SQL-Server-High-Availability-Scalability-and-Reliability"> Availability and Scalability</a></li>
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/SQL-Server-Interoperability"> Interoperability</a></li>
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/SQL-Server-Replication"> Replication</a></li>
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/SQL-Server-Security"> Security</a></li>
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/SQL-Server-Stored-Procedures"> Stored Procedures</a></li>
+							<li class="nav-list-sublist-item"><a href="http://searchsqlserver.techtarget.com/resources/SQL-Transact-SQL-T-SQL"> T-SQL</a></li>
+							<li class="nav-list-sublist-item view-all"><a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Administration">All Subtopics</a></li>
+								</ul>
+					</div>
+				</li>
+			<li class="desktop-fixed-search" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none; width: 654px;">Search the TechTarget Network</li></ul>
+		<ul class="nav-social">
+			<li class="nav-social-item title">Follow:</li>
+			<li class="nav-social-item" title="Follow searchSQLServer on Google+" id="navBarGooglePlus"><a href="https://plus.google.com/114841093762984661577" target="_blank"><i class="icon" data-icon="s"></i></a></li><li class="nav-social-item" title="Like searchSQLServer on Facebook" id="navBarFacebook"><a href="https://www.facebook.com/businessinformationmagazine/200402560107445" target="_blank"><i class="icon" data-icon="u"></i></a></li><li class="nav-social-item" title="Follow @searchsqlserver on Twitter" id="navBarTwitter"><a href="https://twitter.com/searchsqlserver" target="_blank"><i class="icon" data-icon="c"></i></a></li><li class="nav-social-item" title="Follow searchSQLServer on LinkedIn" id="navBarLinkedIn"><a href="https://www.linkedin.com/company/2996610" target="_blank"><i class="icon" data-icon="o"></i></a></li></ul>
+	 </nav>
+</header>
+
+<div class="ad-wrapper header-leaderboard ad-desktop" style="position: inherit; z-index: 99; margin: 0px auto; width: 100%; background-color: rgb(241, 241, 241); top: auto;">
+	<!-- AdsController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<div id="leaderboard" class="ad ad-lb" data-google-query-id="CKDtl6iNytUCFcmgaAod8o8KxA"><script>GPT.display('leaderboard')</script><div id="google_ads_iframe_/3618/sqlsrv/FEATURE_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/3618/sqlsrv/FEATURE_0" title="3rd party ad content" name="google_ads_iframe_/3618/sqlsrv/FEATURE_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./SQL Server 2008 function types in T-SQL_files/saved_resource.html"></iframe></div></div></div>
+</div>
+</div><div id="main-content" class="main-content">
+			<article id="content-columns" class="content-columns">
+				<div><div><!-- ContentItemController, generated at 11:40:40 Tue Aug 8, 2017, by pv-vappma12.techtarget.com -->
+
+
+ 
+
+
+
+
+
+
+	
+	
+	
+	
+	
+
+<header id="content-header" class="main-article-header main-article-header-noimage">
+	<div class="infotype-eyebrow">
+			<a href="http://searchsqlserver.techtarget.com/info/manage" class="infotype-eyebrow-link">Manage</a>
+			<span class="infotype-eyebrow-tooltip" style="display: none;"><i class="icon" data-icon="5"></i>Learn to apply best practices and optimize your operations.</span>
+		</div>
+	<h1 class="main-article-title">SQL Server 2008 function types in T-SQL</h1>
+
+	<ul class="main-article-share-counts">
+		<li class="main-article-share-count main-article-comment-count" title="Add/view comments">
+			<i class="icon" data-icon="z"></i> <span></span> </li>
+		
+		<li class="main-article-share-count inline-social-icons inline cboxElement" title="Share this" href="#social-icons-desktop">
+			<i class="icon" data-icon="f"></i>
+			<span></span>
+		</li>
+	</ul>
+
+	<div class="ad-wrapper page-header-ad ad-desktop">
+		<!-- AdsController, generated at 11:40:40 Tue Aug 8, 2017, by pv-vappma12.techtarget.com -->
+<div id="mu-top" class="ad ad-mu" data-google-query-id="COrll6iNytUCFYskaAod4bAJ9w"><script>GPT.display('mu-top')</script><div id="google_ads_iframe_/3618/sqlsrv/FEATURE_1__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/3618/sqlsrv/FEATURE_1" title="3rd party ad content" name="google_ads_iframe_/3618/sqlsrv/FEATURE_1" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./SQL Server 2008 function types in T-SQL_files/saved_resource(1).html"></iframe></div></div></div>
+
+	<h2 class="main-article-subtitle">Functions in Transact-SQL can be either aggregate functions or scalar functions.  This excerpt from "Microsoft SQL Server 2008: A Beginner's Guide" describes both and details the many numeric functions that can be accessed in SQL Server 2008.</h2>
+	</header>
+</div><div><!-- RefineryController, generated at 03:16:08 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div><div><!-- GuideController, generated at 07:58:24 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div>
+</div><div id="content-left" class="content-left">
+					<div><div class="locking-full-bar">
+	<div class="locking-left-bar" style="position: fixed; top: 80px;">
+		<div><!-- ChaptersBarController, generated at 07:58:25 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<nav id="chapters-bar-menu" class="chapters-bar desktop-chapters-bar" data-required-item="section.main-article-chapter" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;">
+	<div class="chapters-bar-header">
+		<i class="icon" data-icon="1"></i>Sections</div>
+	<ul class="chapters-bar-list"><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Aggregate functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Scalar functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Numeric functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Date Functions</a></li><li class="chapters-bar-item selected"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">String Functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">System Functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Metadata Functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Dig Deeper</a></li></ul>
+</nav></div><div><!-- GuideController, generated at 07:58:24 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div><div><!-- SocialMediaShareBarController, generated at 10:19:43 Tue Aug 8, 2017, by pv-vappma12.techtarget.com -->
+<div id="rail-share-bar">
+		
+	</div>
+</div><div><!-- RelatedContentController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<aside class="related-bar desktop-related-bar" id="related-content-bar">
+		<div class="related-bar-header">
+			<i class="icon" data-icon="l"></i>
+			Related Content</div>
+		<ul class="related-bar-list">
+		<li class="related-bar-item">
+			<a href="http://searchdomino.techtarget.com/tip/Word-function-in-LotusScript">@Word function in LotusScript</a>
+			<span>– SearchDomino</span>
+			</li>
+		<li class="related-bar-item">
+			<a href="http://searchsqlserver.techtarget.com/tip/T-SQL-tricks-for-SQL-Server-2012-T-SQL-functions">T-SQL tricks for SQL Server 2012: T-SQL functions</a>
+			<span>– SearchSQLServer</span>
+			</li>
+		<li class="related-bar-item">
+			<a href="http://searchwindevelopment.techtarget.com/tip/In-line-functions-in-SQL-Server-2000">In-line functions in SQL Server 2000</a>
+			<span>– SearchWinDevelopment</span>
+			</li>
+		</ul>
+</aside>
+</div><ul id="social-icons-desktop" class="share-bar-desktop" style="display: block;">
+		<aside id="social-icons-desktop">
+			<li class="share-bar-item-desktop share-bar-title">Share this item with your network:</li>
+			<li class="share-bar-item-desktop socialMedia-facebook" title="Share on Facebook" data-socialsite="facebook">
+					<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" target="_blank"><i class="icon" data-icon="u"></i></a>
+					<span class="count"></span>
+				</li>
+			<li class="share-bar-item-desktop socialMedia-twitter" title="Share on Twitter" data-socialsite="twitter" data-account="searchsqlserver" data-related="">
+					<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" target="_blank"><i class="icon" data-icon="c"></i></a>
+					<span class="count"></span>
+				</li>
+			<li class="share-bar-item-desktop socialMedia-google" title="Share on Google+" data-socialsite="google">
+					<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" target="_blank"><i class="icon" data-icon="s"></i></a>
+					<span class="count"></span>
+				</li>
+			<li class="share-bar-item-desktop socialMedia-linkedin" title="Share on LinkedIn" data-socialsite="linkedin">
+					<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" target="_blank"><i class="icon" data-icon="o"></i></a>
+					<span class="count"></span>
+				</li>
+			<li class="share-bar-item-desktop contentTools-print" title="Print This Page">
+					<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL?vgnextfmt=print" target="_blank"><i class="icon" data-icon="i"></i></a>
+				</li>
+			<li class="share-bar-item-desktop contentTools-email" title="Email a Friend">
+				<a href="http://api.addthis.com/oexchange/0.8/forward/email/offer?pubid=uxtechtarget&amp;url=http%3A%2F%2Fsearchsqlserver.techtarget.com%2Ffeature%2FSQL-Server-2008-function-types-in-T-SQL&amp;title=SQL+Server+2008+function+types+in+T-SQL&amp;email_template=TechTargetSearchSites&amp;ct=1" target="_blank"><i class="icon" data-icon="n"></i></a>
+			</li>
+		</aside>
+		</ul></div>
+	<aside class="resources-bar desktop-resources-bar" id="resources-bar" style="position: fixed; top: 80px;">
+		<div><!-- VendorResourcesController, generated at 08:54:24 Tue Aug 8, 2017, by pv-vappma12.techtarget.com -->
+<div class="resources-bar-header"><i class="icon" data-icon="l"></i>Sponsored News</div>
+			<ul class="resources-bar-list sponsored-news">
+				<li class="resources-bar-item">
+						<a href="http://searchcio.techtarget.com/ibmcommerce/Leveraging-the-Cloud-for-B2B-Integration-Excellence?asrc=SS_sqlsrv_SN-1327000">Leveraging the Cloud for B2B Integration Excellence</a>
+						<span>–IBM</span>
+					</li>
+				<li class="resources-bar-item">
+						<a href="http://searchcio.techtarget.com/ibmcommerce/Improve-Security-with-Managed-File-Transfer?asrc=SS_sqlsrv_SN-1327000">Improve Security with Managed File Transfer</a>
+						<span>–IBM</span>
+					</li>
+				<li class="resources-bar-item see-more"><a href="http://searchsqlserver.techtarget.com/sponsored_communities">See More</a></li>
+				</ul>
+		<div class="resources-bar-header"><i class="icon" data-icon="l"></i>Vendor Resources</div>
+		<ul class="resources-bar-list" id="vendorResourcesSplash">
+			<li class="resources-bar-item">
+					<a href="http://searchsqlserver.bitpipe.com/detail/RES/1383316450_228.html">Hands-on Oracle Application Express security</a>
+					<span>–ComputerWeekly.com</span>
+					<i class="icon" data-icon=""></i>
+				</li>
+			</ul>
+</div></aside>
+</div></div></div>
+				<div id="content-center" class="content-center">
+					<div><div><!-- EzinePromoController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div><div><!-- ContentItemController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<div class="float-mask" style="display: block; height: 110px;"></div>
+
+
+
+
+
+<ul class="actions-bar">
+	
+	
+	
+	
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<li class="actions-bar-item actions-bar-chapters" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><i class="icon" data-icon="1"></i></li>
+	
+	
+		<li class="actions-bar-item actions-bar-resources" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><i class="icon" data-icon="2"></i></li>
+	
+	
+		<li class="actions-bar-item actions-bar-share"><i class="icon" data-icon="f" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"></i>
+			<ul class="share-bar-mobile">
+			<aside id="social-icons-desktop">
+				
+					<li class="share-bar-item-mobile socialMedia-facebook" title="Share on Facebook" data-socialsite="facebook">
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#"><i class="icon" data-icon="u"></i></a><span class="count"></span>
+					</li>
+				
+				
+					<li class="share-bar-item-mobile socialMedia-twitter" title="Share on Twitter" data-socialsite="twitter" data-account="searchsqlserver" data-related="bizanalyticstt">
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#"><i class="icon" data-icon="c"></i></a><span class="count"></span>
+					</li>
+				
+				
+					<li class="share-bar-item-mobile socialMedia-google" title="Share on Google+" data-socialsite="google">
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#"><i class="icon" data-icon="s"></i></a><span class="count"></span>
+					</li>
+				
+				
+				
+					<li class="share-bar-item-mobile socialMedia-linkedin" title="Share on LinkedIn" data-socialsite="linkedin">
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#"><i class="icon" data-icon="o"></i></a><span class="count"></span>
+					</li>	
+				
+				<li class="share-bar-item-mobile contentTools-email" title="Email a Friend">
+					<a href="http://api.addthis.com/oexchange/0.8/forward/email/offer?pubid=uxtechtarget&amp;url=http%3A%2F%2Fsearchsqlserver.techtarget.com%2Ffeature%2FSQL-Server-2008-function-types-in-T-SQL&amp;title=SQL+Server+2008+function+types+in+T-SQL&amp;email_template=TechTargetSearchSites&amp;ct=1"><i class="icon" data-icon="n"></i></a>
+				</li>
+			</aside>
+			</ul>
+		</li>
+	
+</ul><section id="content-body">
+<p><b>Transact-SQL Functions</b></p>
+<div id="inlineRegistrationWrapper">
+ <div id="inlineRegistration">
+  <div class="login-register inline-reg page1"> 
+   <a href="http://users.techtarget.com/registration/searchsqlserver/LoginRegister">Sign in for existing members</a> 
+  </div> 
+  <section class="sign-up-wrapper inline-reg page1"> 
+   <div class="sign-up-content"> 
+    <header class="sign-up-header"> 
+     <h2>Continue Reading This Article</h2> 
+     <p>Enjoy this article as well as all of our content, including E-Guides, news, tips and more.</p> 
+    </header> 
+    <div class="meterContainer" style="display: none;"> 
+     <div class="meterDescription">
+      Step 2 of 2:
+     </div> 
+     <div class="meter"> 
+      <div id="percentage" class="green"></div> 
+     </div> 
+    </div>
+    <form action="http://users.techtarget.com/registration/searchSQLServer/InlineRegisterActivate.page" name="inlineregform" class="sign-up-form" id="inlineregform" method="post"> 
+     <fieldset> 
+      <ul class="">
+       <script>
+
+window["inlineRegistration_VALIDATION_MAXLENGTH"] = "You have exceeded the maximum character limit.";
+
+</script>
+       <li><input type="text" id="inlineRegistration_Email" name="dgUser#email" maxlength="100" size="25" value="" data-required="true" class="sign-up-textfield progressBarItem" placeholder="corporate email address">
+        <div class="signupErrors">
+         <p id="inlineRegistration_Email.blank" class="sign-up-error-msg hidden">You forgot to provide an Email Address.</p>
+         <p id="inlineRegistration_Email.invalid" class="sign-up-error-msg hidden">This email address doesn’t appear to be valid.</p>
+         <p id="inlineRegistration_Email.exists" class="sign-up-error-msg hidden">This email address is already registered. Please <a href="http://users.techtarget.com/registration/searchsqlserver/LoginRegister" class="inlineRegLoginErrMsg">login</a>.</p>
+         <p id="inlineRegistration_Email.maxlength" class="sign-up-error-msg hidden">You have exceeded the maximum character limit.</p>
+         <p id="inlineRegistration_Email.invalid.domain" class="sign-up-error-msg hidden">Please provide a Corporate E-mail Address.</p>
+        </div><input type="hidden" id="inlineRegistration_AppCode" name="appCD" value="55"><input type="hidden" id="inlineRegistration_ContentId" name="guideContentId" value=""><input type="hidden" id="inlineRegistration_AdId" name="ad_id" value="1327000"><input type="hidden" id="inlineRegistration_TEST---AB-Tracking1" name="dgUser#abTracking1" value=""></li>
+       <li class=""><input type="submit" value="Continue Reading" class="sign-up-btn" id="inlineRegSubmit"></li>
+       <div id="inlineRegProcessing" style="margin:30px 0px 15px 140px; display:none">
+        <span class="processing" style="display:inline"><span class="animatedIcon"></span><span id="inlineRegProcessingText"></span></span>
+       </div>
+       <p class="declarationOfConsent" id="inlineRegistration_declarationOfConsent" style="display:none">By submitting my Email address I confirm that I have read and accepted the Terms of Use and <a href="http://users.techtarget.com/registration/searchSQLServer/DisplayConsentText.page?languageCd=en&amp;enText=true" class="consentWindow">Declaration of Consent.</a></p> 
+       <input type="hidden" id="inlineRegistration_Consent-Popup" name="user_consent#link" value="en">
+      </ul>
+     </fieldset> 
+    </form>
+    <div> 
+     <p class="sign-up-fine-print" style="font-size:12px"> By submitting your personal information, you agree that TechTarget and its <a href="http://www.techtarget.com/html/privacy_partners_0-c.html" target="_blank">partners</a> may contact you regarding relevant content, products and special offers. </p> 
+    </div> 
+    <div style="margin-top:10px"> 
+     <p class="sign-up-fine-print" style="font-size:12px"> You also agree that your personal information may be transferred and processed in the United States, and that you have read and agree to the <a href="http://searchsqlserver.techtarget.com/about/copyright" target="_blank">Terms of Use</a> and the <a href="http://www.techtarget.com/html/privacy_policy.html" target="_blank">Privacy Policy</a>. </p> 
+    </div> 
+   </div>  
+  </section>
+  <script>/**
+  * rename inlinereg div id specifid responsive v7 code. 
+  */
+$("#inlineRegistrationContainer").attr("id", "inlineRegistration"); 
+
+/**
+  * rename "inlineRegistrationContainer_" ids with "inlineRegistration_" ids 
+  */
+$.each($("[id^='inlineRegistrationContainer_']"), function () { 
+
+  // determin newId 
+  var newId = this.id.replace("inlineRegistrationContainer_", "inlineRegistration_"); 
+
+  if ($("label[for='"+this.id+"']") != undefined) { 
+    // update 'for' label attribute for newId 
+    $("label[for='"+this.id+"']").attr('for', newId); 
+  } 
+
+  // update to newId 
+  $(this).attr('id', newId); 
+}); 
+
+/**
+  * Replace with responsive error msg class 
+  */
+renameErrorMsgClass();
+
+$(".sign-up-error-msg").each(function() { 
+  if (! $(this).parent().hasClass("signupErrors")) { 
+      var elm = this.outerHTML; 
+      this.outerHTML = "<div class='signupErrors'>"+elm+"</div>"; 
+  }
+});
+
+/**
+  * remove unnecessary class from ul
+  */
+$("#inlineregform").find( "ul" ).removeClass("default-list");
+
+/**
+  * Replace "errorMessageInput" class with "sign-up-error-msg" class
+  */
+function renameErrorMsgClass() {
+    $(".errorMessageInput").each(function() { 
+        if ($(this).hasClass("hidden")) { 
+             $(this).removeClass("errorMessageInput hidden").addClass("sign-up-error-msg hidden"); 
+        } else { 
+             $(this).removeClass("errorMessageInput").addClass("sign-up-error-msg"); 
+        } 
+    });
+}
+
+/**
+  * when validation function is called, replace "errorMessageInput" with "sign-up-error-msg"
+  * before return
+  */
+function validateThis(v, form) {
+    var validateReturn = urValidation.validate(v, form);
+    renameErrorMsgClass();
+    return validateReturn;
+}
+
+
+/**
+  * DoC pop-up window js - included in moScripts.js which is not included in responsive page
+  */
+$("#inlineRegistration").on("click","a.consentWindow", function(e) {
+        window.open(this.href, "Consent", "width=500,height=600,scrollbars=1");
+        e.preventDefault();
+});
+</script>
+  <script>$(".meterContainer" ).hide();
+
+window.placeHolderBlankOut = function (othis) {
+  $this=$(othis); if($this.val() == $this.attr("placeholder")) $this.val(""); 
+};
+
+window.placeHolderInit = function (othis) {
+  $this=$(othis); if($this.val() == "") $this.val($this.attr("placeholder"));
+};
+
+//Populate placeholder values for IE
+(function ($) {
+  $.support.placeholder = ('placeholder' in document.createElement('input'));
+})(jQuery);
+
+if (!$.support.placeholder) {
+  $("#inlineregform").find("[placeholder]")
+  .each( function() { placeHolderInit(this); } )
+  .focus( function () { placeHolderBlankOut(this); } )
+  .blur( function () { placeHolderInit(this); } );
+}
+
+$("#inlineregform").submit(function(e) {
+
+  if($(this).hasClass("submitInProgress")) {
+    e.preventDefault(); 
+    return false;
+  } else {
+    $(this).addClass("submitInProgress")
+  }
+
+  if (!$.support.placeholder) {
+    $(this).find('[placeholder]').each( function() { placeHolderBlankOut(this); } );
+  }
+
+  var validation = {
+      msgInline: true,
+      highlightClass: "error",
+      highlightNode: "self",
+      errorMsgClass: "sign-up-error-msg",
+      triggerJqueryEvent: {
+          error: "tt.inlinereg.emailOnly.error",
+          submit: "tt.inlinereg.emailOnly.submit"
+      },
+      required: { fields: ["dgUser#email"] },
+      emailDomain: { fields: ["dgUser#email"] },
+      emailFormat: { fields: ["dgUser#email"] },
+      emailExists: {
+          field: "dgUser#email",
+          onsuccess: "irr",
+          onfailure: "uidfwd",
+          noHL: true,
+          noErrMsg: true,
+          processingGif: {
+              id: "inlineRegProcessing",
+              hideSubmitId: "inlineRegSubmit",
+              displayStyle: "block"
+          }
+      }
+  };
+
+  var isUrValid = urValidation.validate(validation, this);
+
+  if (!$.support.placeholder && !isUrValid) {
+    $(this).find('[placeholder]').each( function() { placeHolderInit(this); } );
+  }
+
+  if(!isUrValid) { 
+   $(this).removeClass("submitInProgress");
+  }
+
+  return isUrValid;
+});
+
+window.uidfwd = function() { 
+  window.location.href="http://users.techtarget.com/registration/searchSQLServer/UID.page?email="+encodeURIComponent(document.getElementById("inlineregform").elements["dgUser#email"].value);
+}
+</script>
+  <script>
+window.irr = function() {
+
+        $("#inlineRegSubmit").hide();
+        // $("#inlineRegProcessingText").html("Beginning Registration...")
+        $("#inlineRegProcessing").show();
+
+        var err = function() {
+
+            $("#inlineRegProcessing .animatedIcon").hide();
+            $("#inlineRegProcessingText").attr("class","error");
+            $("#inlineRegProcessingText").html("There was an error processing your information. Please try again later.");
+            $("#inlineRegistration").trigger("tt.inlinereg.emailOnly.error");
+        };
+	var self = this;
+	self.crs;	
+	self.tt_ut;
+	var userregUrl = "http://users.techtarget.com/registration/rest/RegistrationService/";
+	var f = $("#inlineregform")[0].elements;
+	var userParams = {
+		email: encodeURIComponent($.trim(f["dgUser#email"].value)),
+		siteName: "searchSQLServer",
+		appCode: encodeURIComponent(f["appCD"].value),
+		adId: encodeURIComponent(f["ad_id"].value),
+		contentId: encodeURIComponent(f["guideContentId"].value),
+		utmSource: encodeURIComponent(getUtmSrcForReg()),
+                abTracking1: encodeURIComponent(f["dgUser#abTracking1"].value)
+	};
+
+        var passThruVars = {
+            FromURL: window.location.href,
+            AppCode: f["appCD"].value,
+            AdId: f["ad_id"].value,
+            ContentId: f["guideContentId"].value
+        };
+        window.inlineRegistration_variables = passThruVars;
+
+	$.getJSON(userregUrl + "RegisterEmail?callback=?", userParams, function(data) {
+		if(data.RegTx[0].status == 'SUCCESS') {
+			var d = new Date();
+			d.setTime(d.getTime()+(5*365*24*60*60*1000)); // 5yrs
+			var expireDate = d.toGMTString();
+			for (var i = 0; i < data.RegTx[0].cookies.cookie.length; i++) { 
+				var c = data.RegTx[0].cookies.cookie[i];
+				document.cookie = c.name+"="+c.value+"; expires="+expireDate+"; path=/; domain="+getTopLevelDomainEnv(false);
+			}
+	
+			self.crs = data.RegTx[0].cookies.cookie[1].value;
+			self.tt_ut = data.RegTx[0].cookies.cookie[0].value;
+	
+			// Load step2 
+			executeInlineByPageAndParams("searchSQLServer", "inlineRegistration", "inlineregister", 7, { t:(new Date().getTime()) }); 
+		}
+		if(data.RegTx[0].validations.validation) {
+                     err();
+		}
+	
+	}).fail(function() {
+             err();
+	});
+
+ 
+};
+
+</script>
+  <script>window.getUtmSrcForReg = function() { 
+  var decode = function(s) { return (s) ? decodeURIComponent(s.replace(/\+/g, " ")) : ""; };
+  var ret = getCookieValue("tt_src") || decode(getQueryStringValue("utm_source")) || "";
+  return ret;
+}
+</script>
+ </div>
+</div> 
+<p>Transact-SQL functions can be either aggregate functions or scalar functions. The following sections describe these function types.</p> 
+<section class="section main-article-chapter" data-menu-title="Aggregate functions">
+ <h3 class="section-title"><i class="icon" data-icon="1"></i><b>Aggregate functions</b></h3>
+ <p><i>Aggregate functions</i> are applied to a group of data values from a column. Aggregate functions always return a single value. Transact-SQL supports several groups of aggregate functions:</p>
+ <div class="ad-wrapper ad-embedded"> 
+  <div id="halfpage" class="ad ad-hp" data-google-query-id="CJyRmaiNytUCFZMUaAodGv4Jnw">
+   <script>GPT.display('halfpage')</script>
+  <div id="google_ads_iframe_/3618/sqlsrv/FEATURE_2__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 600px;"><iframe frameborder="0" src="./SQL Server 2008 function types in T-SQL_files/container.html" id="google_ads_iframe_/3618/sqlsrv/FEATURE_2" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="600" data-is-safeframe="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div> 
+  <div id="mu-1" class="ad ad-mu">
+   <script>GPT.display('mu-1')</script>
+  </div> 
+ </div>
+ <ul class="noindent"> 
+  <li class="indentfix">Convenient aggregate functions</li> 
+  <li class="indentfix">Statistical aggregate functions</li> 
+  <li class="indentfix">User-defined aggregate functions</li> 
+  <li class="indentfix">Analytic aggregate functions</li> 
+ </ul>
+ <p>Statistical and analytic aggregates are discussed in Chapter 24. User-defined aggregates are beyond the scope of this book. That leaves the convenient aggregate functions, described next:</p>
+ <ul class="noindent"> 
+  <li class="indentfix"><b>AVG</b> - Calculates the arithmetic mean (average) of the data values contained within a column. The column must contain numeric values.</li> 
+  <li class="indentfix"><b>MAX and MIN</b> - Calculate the maximum and minimum data value of the column, respectively. The column can contain numeric, string, and date/time values.</li> 
+  <li class="indentfix"><b>SUM</b> - Calculates the total of all data values in a column. The column must contain numeric values.</li> 
+  <li class="indentfix"><b>COUNT</b> - Calculates the number of (non-null) data values in a column. The only aggregate function not being applied to columns is COUNT(*). This function returns the number of rows (whether or not particular columns have NULL values).</li> 
+  <li class="indentfix"><b>COUNT_BIG</b> - Analogous to COUNT, the only difference being that COUNT_BIG returns a value of the BIGINT data type.</li> 
+ </ul>
+ <p>The use of convenient aggregate functions with the SELECT statement are described in detail in Chapter 6.</p>
+</section>      
+<section class="section main-article-chapter" data-menu-title="Scalar functions">
+ <h3 class="section-title"><i class="icon" data-icon="1"></i><b>Scalar functions</b></h3>
+ <p>In addition to aggregate functions, Transact-SQL provides several scalar functions that are used in the construction of scalar expressions. (A scalar function operates on a single value or list of values, as opposed to aggregate functions, which operate on the data from multiple rows.) Scalar functions can be categorized as follows:</p>
+ <div class="pro-features-wrapper"></div>
+ <ul class="noindent"> 
+  <li class="indentfix">Numeric functions</li> 
+  <li class="indentfix">Date functions</li> 
+  <li class="indentfix">String functions</li> 
+  <li class="indentfix">System functions</li> 
+  <li class="indentfix">Metadata functions</li> 
+ </ul>
+ <p><b>The following sections describe these function types.</b></p>
+</section>    
+<section class="section main-article-chapter" data-menu-title="Numeric functions">
+ <h3 class="section-title"><i class="icon" data-icon="1"></i><b>Numeric functions</b></h3>
+ <p>Numeric functions within Transact-SQL are mathematical functions for modifying numeric values. The following numeric functions are available:</p>
+ <table border="1" cellspacing="0" cellpadding="0" style=" width: 650px;"> 
+  <tbody>
+   <tr> 
+    <td style=" text-align: center; width: 128px;"><b>Function</b></td> 
+    <td style=" text-align: center; width: 356px;"><b>Explanation</b></td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 128px;">ABS(n)</td> 
+    <td style=" width: 356px;">Returns the absolute value (i.e., negative values are returned as positive) of the numeric expression <b>n</b>. Example:<br> SELECT ABS(–5.767) = 5.767, SELECT ABS(6.384) = 6.384</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 128px;">ACOS(n)</td> 
+    <td style=" width: 356px;">Calculates arc cosine of <b>n</b>. <b>n</b> and the resulting value belong to the FLOAT data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 128px;">ASIN(n)</td> 
+    <td style=" width: 356px;">Calculates the arc sine of <b>n</b>. <b>n</b> and the resulting value belong to the FLOAT data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 128px;">ATAN(n)</td> 
+    <td style=" width: 356px;">Calculates the arc tangent of <b>n</b>. <b>n</b> and the resulting value belong to the FLOAT data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 128px;">ATN2(n,m)</td> 
+    <td style=" width: 356px;">Calculates the arc tangent of <b>n/m. n, m,</b> and the resulting value belong to the FLOAT data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 128px;">CEILING(n)</td> 
+    <td style=" width: 356px;">Returns the smallest integer value greater or equal to the specified parameter. Examples:<br> SELECT CEILING(4.88) = 5<br> SELECT CEILING(–4.88) = –4</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 128px;">COS(n)</td> 
+    <td style=" width: 356px;">Calculates the cosine of <b>n. n</b> and the resulting value belong to the FLOAT data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 128px;">COT(n)</td> 
+    <td style=" width: 356px;">Calculates the cotangent of <b>n. n</b> and the resulting value belong to the FLOAT data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 128px;">DEGREES(n)</td> 
+    <td style=" width: 356px;">Converts radians to degrees. Examples:<br> SELECT DEGREES(PI()/2) = 90.0<br> SELECT DEGREES(0.75) = 42.97</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">EXP(n)</td> 
+    <td style=" width: 356px;">Calculates the value <b>e^n</b>. Example: SELECT EXP(1) = 2.7183</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">FLOOR(n)</td> 
+    <td style=" width: 356px;">Calculates the largest integer value less than or equal to the specified value <b>n</b>. Example:<br> SELECT FLOOR(4.88) = 4</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">LOG(n)</td> 
+    <td style=" width: 356px;">Calculates the natural (i.e., base e) logarithm of <b>n</b>. Examples:<br> SELECT LOG(4.67) = 1.54<br> SELECT LOG(0.12) = –2.12</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">LOG10(n)</td> 
+    <td style=" width: 356px;">Calculates the logarithm (base 10) for <b>n</b>. Examples:<br> SELECT LOG10(4.67) = 0.67<br> SELECT LOG10(0.12) = –0.92</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">PI()</td> 
+    <td style=" width: 356px;">Returns the value of the number pi (3.14).</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">POWER(x,y)</td> 
+    <td style=" width: 356px;">Calculates the value <b>x^y</b>. Examples: SELECT POWER(3.12,5) = 295.65<br> SELECT POWER(81,0.5) = 9</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">RADIANS(n)</td> 
+    <td style=" width: 356px;">Converts degrees to radians. Examples:<br> SELECT RADIANS(90.0) = 1.57<br> SELECT RADIANS(42.97) = 0.75</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">RAND</td> 
+    <td style=" width: 356px;">Returns a random number between 0 and 1 with a FLOAT data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">ROUND(n, p,[t])</td> 
+    <td style=" width: 356px;">Rounds the value of the number <b>n</b> by using the precision <b>p</b>. Use positive values of <b>p</b> to round on the right side of the decimal point and use negative values to round on the left side. An optional parameter <b>t</b> causes <b>n</b> to be truncated. Examples:<br> SELECT ROUND(5.4567,3) = 5.4570<br> SELECT ROUND(345.4567,–1) = 350.0000<br> SELECT ROUND(345.4567,–1,1) = 340.0000</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">ROWCOUNT_BIG</td> 
+    <td style=" width: 356px;">Returns the number of rows that have been affected by the last Transact-SQL statement executed by the system. The return value of this function has the BIGINT data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">SIGN(n)</td> 
+    <td style=" width: 356px;">Returns the sign of the value <b>n</b> as a number (+1 for positive, –1 for negative, and 0 for zero).<br> Example:<br> SELECT SIGN(0.88) = 1</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">SIN(n)</td> 
+    <td style=" width: 356px;">Calculates the sine of <b>n. n</b> and the resulting value belong to the FLOAT data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">SQRT(n)</td> 
+    <td style=" width: 356px;">Calculates the square root of <b>n</b>. Example:<br> SELECT SQRT(9) = 3</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">SQUARE(n)</td> 
+    <td style=" width: 356px;">Returns the square of the given expression. Example:<br> SELECT SQUARE(9) = 81</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 295px;">TAN(n)</td> 
+    <td style=" width: 356px;">Calculates the tangent of <b>n. n</b> and the resulting value belong to the FLOAT data type.</td> 
+   </tr> 
+  </tbody>
+ </table>
+</section>   
+<section class="section main-article-chapter" data-menu-title="Date Functions">
+ <h3 class="section-title"><i class="icon" data-icon="1"></i><b>Date Functions</b></h3>
+ <p>Date functions calculate the respective date or time portion of an expression or return the value from a time interval. Transact-SQL supports the following date functions:</p>
+ <table border="1" cellspacing="0" cellpadding="0" style=" width: 650px;"> 
+  <tbody>
+   <tr> 
+    <td width="50%" style=" text-align: center;"><b>Function</b></td> 
+    <td width="50%" style=" text-align: center;"><b>Explanation</b></td> 
+   </tr> 
+   <tr> 
+    <td width="50%">GETDATE()</td> 
+    <td width="50%">Returns the current system date and time. Example:<br> SELECT GETDATE() = 2008-01-01 13:03:31.390</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">DATEPART(item,date)</td> 
+    <td width="50%">Returns the specified part <b>item</b> of a date <b>date</b> as an integer. Examples:<br> SELECT DATEPART(month, '01.01.2005') = 1 (1 = January)<br> SELECT DATEPART(weekday, '01.01.2005') = 7 (7 = Sunday)</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">DATENAME(item,date)</td> 
+    <td width="50%">Returns the specified part <b>item</b> of the date <b>date</b> as a character string. Example:<br> SELECT DATENAME(weekday, '01.01.2005') = Saturday</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">DATEDIFF(item,dat1,dat2)</td> 
+    <td width="50%">Calculates the difference between the two date parts <b>dat1</b> and <b>dat2</b> and returns the result as an integer in units specified by the value <b>item</b>. Example:<br> SELECT DATEDIFF(year, BirthDate, GETDATE()) AS age FROM employee; -&gt; returns the age of each employee.</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">DATEADD(i,n,d)</td> 
+    <td width="50%">Adds the number <b>n</b> of units specified by the value <b>i</b> to the given date <b>d</b>. Example:<br> SELECT DATEADD(DAY,3,HireDate) AS age FROM employee; -&gt; adds three days to the starting date of employment of every employee (see the <b>sample</b> database).</td> 
+   </tr> 
+  </tbody>
+ </table>
+ <p>&nbsp;</p>
+ <div class="extra-info">
+  <div class="extra-info-inner">
+   <p>You are reading part 3 from "<a target="_blank" href="http://searchsqlserver.techtarget.com/feature/Basic-objects-of-T-SQL-in-SQL-Server-2008">The basic objects of T-SQL in SQL Server 2008</a>," excerpted from <i>Microsoft SQL Server 2008: A Beginner's Guide</i>, by Dusan Petkovic, copyright 2008, printed with permission from McGraw-Hill Osborne Media.</p>
+  </div>
+ </div>
+</section>     
+<section class="section main-article-chapter" data-menu-title="String Functions">
+ <h3 class="section-title"><i class="icon" data-icon="1"></i><b>String Functions</b></h3>
+ <p>String functions are used to manipulate data values in a column, usually of a character data type. Transact-SQL supports the following string functions:</p>
+ <table border="1" cellspacing="0" cellpadding="0" style=" width: 650px;"> 
+  <tbody>
+   <tr> 
+    <td style=" text-align: center; width: 201px;"><b>Function</b></td> 
+    <td style=" text-align: center; width: 450px;"><b>Explanation</b></td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">ASCII(character)</td> 
+    <td style=" width: 450px;">Converts the specified character to the equivalent integer (ASCII) code. Returns an integer. Example:<br> SELECT ASCII('A') = 65</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">CHAR(integer)</td> 
+    <td style=" width: 450px;">Converts the ASCII code to the equivalent character. Example:<br> SELECT CHAR(65) = 'A'.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">CHARINDEX(z1,z2)</td> 
+    <td style=" width: 450px;">Returns the starting position where the partial string <b>z1</b> first occurs in the string <b>z2</b>. Returns 0 if <b>z1</b> does not occur in <b>z2</b>. Example:<br> SELECT CHARINDEX('bl', 'table') = 3.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">DIFFERENCE(z1,z2)</td> 
+    <td style=" width: 450px;">Returns an integer, 0 through 4, that is the difference of SOUNDEX values of two strings <b>z1</b> and <b>z2</b>. (SOUNDEX returns a number that specifies the sound of a string. With this method, strings with similar sounds can be determined.) Example:<br> SELECT DIFFERENCE('spelling', 'telling') = 2 (sounds a little bit similar, 0 = doesn't sound similar)</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">LEFT(z, length)</td> 
+    <td style=" width: 450px;">Returns the first <b>length</b> characters from the string <b>z</b>.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">LEN(z)</td> 
+    <td style=" width: 450px;">Returns the number of characters, instead of the number of bytes, of the specified string expression, excluding trailing blanks.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">LOWER(z1)</td> 
+    <td style=" width: 450px;">Converts all uppercase letters of the string <b>z1</b> to lowercase letters. Lowercase letters and numbers, and other characters, do not change. Example:<br> SELECT LOWER('BiG') = 'big'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">LTRIM(z)</td> 
+    <td style=" width: 450px;">Removes leading blanks in the string <b>z</b>. Example:<br> SELECT LTRIM(' String') = 'String'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">NCHAR(i)</td> 
+    <td style=" width: 450px;">Returns the Unicode character with the specified integer code, as defined by the Unicode standard.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">QUOTENAME(char_string)</td> 
+    <td style=" width: 450px;">Returns a Unicode string with the delimiters added to make the input string a valid delimited identifier.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">PATINDEX(%p%,expr)</td> 
+    <td style=" width: 450px;">Returns the starting position of the first occurrence of a pattern <b>p</b> in a specified expression <b>expr</b>, or zeros if the pattern is not found. Examples:<br> 1) SELECT PATINDEX('%gs%', 'longstring') = 4;<br> 2) SELECT RIGHT(ContactName, LEN(ContactName)-PATINDEX('% %',ContactName)) AS First_name FROM Customers;<br> (The second query returns all first names from the <b>customers</b> column.)</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">REPLACE(str1,str2,str3)</td> 
+    <td style=" width: 450px;">Replaces all occurrences of the <b>str2</b> in the <b>str1</b> with the <b>str3</b>. Example:<br> SELECT REPLACE('shave' , 's' , 'be') = behave</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">REPLICATE(z,i)</td> 
+    <td style=" width: 450px;">Repeats string <b>z i</b> times. Example:<br> SELECT REPLICATE('a',10) = 'aaaaaaaaaa'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">REVERSE(z)</td> 
+    <td style=" width: 450px;">Displays the string <b>z</b> in the reverse order. Example:<br> SELECT REVERSE('calculate') = 'etaluclac'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">RIGHT(z,length)</td> 
+    <td style=" width: 450px;">Returns the last <b>length</b> characters from the string <b>z</b>. Example:<br> SELECT RIGHT('Notebook',4) = 'book'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">RTRIM(z)</td> 
+    <td style=" width: 450px;">Removes trailing blanks of the string <b>z</b>. Example:<br> SELECT RTRIM('Notebook ') = 'Notebook'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">SOUNDEX(a)</td> 
+    <td style=" width: 450px;">Returns a four-character SOUNDEX code to determine the similarity between two strings.<br> Example:<br> SELECT SOUNDEX('spelling') = S145</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">SPACE(length)</td> 
+    <td style=" width: 450px;">Returns a string with spaces of length specified by <b>length</b>. Example:<br> SELECT SPACE = ' '</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">STR(f,[len [,d]])</td> 
+    <td style=" width: 450px;">Converts the specified float expression <b>f</b> into a string. <b>len</b> is the length of the string including decimal point, sign, digits, and spaces (10 by default), and <b>d</b> is the number of digits to the right of the decimal point to be returned. Example:<br> SELECT STR(3.45678,4,2) = '3.46'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">STUFF(z1,a,length,z2)</td> 
+    <td style=" width: 450px;">Replaces the partial string <b>z1</b> with the partial string <b>z2</b> starting at position a, replacing <b>length</b> characters of <b>z1</b>. Examples:<br> SELECT STUFF('Notebook',5,0, ' in a ') = 'Note in a book'<br> SELECT STUFF('Notebook',1,4, 'Hand') = 'Handbook'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">SUBSTRING(z,a,length)</td> 
+    <td style=" width: 450px;">Creates a partial string from string <b>z</b> starting at the position a with a length of <b>length</b>.<br> Example:<br> SELECT SUBSTRING('wardrobe',1,4) = 'ward'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">UNICODE</td> 
+    <td style=" width: 450px;">Returns the integer value, as defined by the Unicode standard, for the first character of the input expression.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 201px;">UPPER(z)</td> 
+    <td style=" width: 450px;">Converts all lowercase letters of string <b>z</b> to uppercase letters. Uppercase letters and numbers do not change. Example:<br> SELECT UPPER('loWer') = 'LOWER'</td> 
+   </tr> 
+  </tbody>
+ </table>
+</section>   
+<section class="section main-article-chapter" data-menu-title="System Functions">
+ <h3 class="section-title"><i class="icon" data-icon="1"></i><b>System Functions</b></h3>
+ <p>System functions of Transact-SQL provide extensive information about database objects. Most system functions use an internal numeric identifier (ID), which is assigned to each database object by the system at its creation. Using this identifier, the system can uniquely identify each database object. System functions provide information about the database system. The following table describes several system functions. (For the complete list of all system functions, please see Books Online.)</p>
+ <table border="1" cellspacing="0" cellpadding="0" style=" width: 650px;"> 
+  <tbody>
+   <tr> 
+    <td style=" text-align: center; width: 219px;"><b>Function</b></td> 
+    <td style=" text-align: center; width: 432px;"><b>Explanation</b></td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">CAST(a AS type [(length)]</td> 
+    <td style=" width: 432px;">Converts an expression <b>a</b> into the specified data type <b>type</b> (if possible). <b>a</b> could be any valid expression. Example:<br> SELECT CAST(3000000000 AS BIGINT) = 3000000000</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">COALESCE(a1,a2,…)</td> 
+    <td style=" width: 432px;">Returns for a given list of expressions <b>a1, a2</b>,... the value of the first expression that is not NULL.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">COL_LENGTH(obj,col)</td> 
+    <td style=" width: 432px;">Returns the length of the column <b>col</b> belonging to the database object (table or view) <b>obj</b>. Example:<br> SELECT COL_LENGTH('customers', 'cust_ID') = 10</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">CONVERT(type[(length)],a)</td> 
+    <td style=" width: 432px;">Equivalent to CAST, but the arguments are specified differently. CONVERT can be used with any data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">CURRENT_TIMESTAMP</td> 
+    <td style=" width: 432px;">Returns the current date and time. Example:<br> SELECT CURRENT_TIMESTAMP = '2008-01-01 17:22:55.670'</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">CURRENT_USER</td> 
+    <td style=" width: 432px;">Returns the name of the current user.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">DATALENGTH(z)</td> 
+    <td style=" width: 432px;">Calculates the length (in bytes) of the result of the expression <b>z</b>. Example:<br> SELECT DATALENGTH(ProductName) FROM products. (This query returns the length of each field.)</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">GETANSINULL('dbname')</td> 
+    <td style=" width: 432px;">Returns 1 if the use of NULL values in the database <b>dbname</b> complies with the ANSI SQL standard. (See also the explanation of NULL values at the end of this chapter.) Example:<br> SELECT GETANSINULL('AdventureWorks') = 1</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">ISNULL(expr, value)</td> 
+    <td style=" width: 432px;">Returns the value of <b>expr</b> if that value is not null; otherwise, it returns <b>value</b> (see Example 5.22).</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">ISNUMERIC(expression)</td> 
+    <td style=" width: 432px;">Determines whether an expression is a valid numeric type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">NEWID()</td> 
+    <td style=" width: 432px;">Creates a unique ID number that consists of a 16-byte binary string intended to store values of the UNIQUEIDENTIFIER data type.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">NEWSEQUENTIALID()</td> 
+    <td style=" width: 432px;">Creates a GUID that is greater than any GUID previously generated by this function on a specified computer. (This function can only be used as a default value for a column.)</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">NULLIF(expr1,expr2)</td> 
+    <td style=" width: 432px;">Returns the NULL value if the expressions <b>expr1</b> and <b>expr2</b> are equal. Example:<br> SELECT NULLIF(project_no, 'p1') FROM projects. (The query returns NULL for the project with the project_no = 'p1').</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">SERVERPROPERTY(propertyname)</td> 
+    <td style=" width: 432px;">Returns the property information about the database server.</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">SYSTEM_USER</td> 
+    <td style=" width: 432px;">Returns the login ID of the current user. Example:<br> SELECT SYSTEM_USER = LTB13942dusan</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">USER_ID([user_name])</td> 
+    <td style=" width: 432px;">Returns the identifier of the user <b>user_name</b>. If no name is specified, the identifier of the current user is retrieved. Example:<br> SELECT USER_ID('guest') = 2</td> 
+   </tr> 
+   <tr> 
+    <td style=" width: 219px;">USER_NAME([id])</td> 
+    <td style=" width: 432px;">Returns the name of the user with the identifier <b>id</b>. If no name is specified, the name of the current user is retrieved. Example:<br> SELECT USER_NAME = 'guest'</td> 
+   </tr> 
+  </tbody>
+ </table>
+ <p>All string functions can be nested in any order; for example, REVERSE(CURRENT_USER).</p>
+</section>    
+<section class="section main-article-chapter" data-menu-title="Metadata Functions">
+ <h3 class="section-title"><i class="icon" data-icon="1"></i><b>Metadata Functions</b></h3>
+ <p>Generally, metadata functions return information concerning the specified database and database objects. The following table describes several metadata functions. (For the complete list of all metadata functions, please see Books Online.)</p>
+ <div class="join-discussion-wrapper"></div>
+ <table border="1" cellspacing="0" cellpadding="0" style=" width: 650px;"> 
+  <tbody>
+   <tr> 
+    <td width="50%" style=" text-align: center;"><b>Function</b></td> 
+    <td width="50%" style=" text-align: center;"><b>Explanation</b></td> 
+   </tr> 
+   <tr> 
+    <td width="50%">COL_NAME(tab_id, col_id)</td> 
+    <td width="50%">Returns the name of a column belonging to the table with the ID <b>tab_id</b> and column ID <b>col_id</b>. Example:<br> SELECT COL_NAME(OBJECT_ID('employee') , 3) = 'emp_lname'</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">COLUMNPROPERTY(id, col, property)</td> 
+    <td width="50%">Returns the information about the specified column. Example:<br> SELECT COLUMNPROPERTY(object_id('project'), 'project_no', 'PRECISION') = 4</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">DATABASEPROPERTY(database, property)</td> 
+    <td width="50%">Returns the named database property value for the specified database and property. Example:<br> SELECT DATABASEPROPERTY('sample', 'IsNullConcat') = 0. (The <b>IsNullConcat</b> property corresponds to the option CONCAT_NULL_YIELDS_NULL, which is described at the end of this chapter.)</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">DB_ID([db_name])</td> 
+    <td width="50%">Returns the identifier of the database <b>db_name</b>. If no name is specified, the identifier of the current database is returned. Example:<br> SELECT DB_ID('AdventureWorks') = 6</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">DB_NAME([db_id])</td> 
+    <td width="50%">Returns the name of the database with the identifier <b>db_id</b>. If no identifier is specified, the name of the current database is displayed. Example:<br> SELECT DB_NAME(6) = 'AdventureWorks'</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">INDEX_COL(table, i, no)</td> 
+    <td width="50%">Returns the name of the indexed column in the table <b>table</b>, defined by the index identifier <b>i</b> and the position <b>no</b> of the column in the index.</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">INDEXPROPERTY(obj_id, index_name, property)</td> 
+    <td width="50%">Returns the named index or statistics property value of a specified table identification number, index or statistics name, and property name.</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">OBJECT_NAME(obj_id)</td> 
+    <td width="50%">Returns the name of the database object with the identifier <b>obj_id</b>. Example:<br> SELECT OBJECT_NAME(453576654) = 'products'</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">OBJECT_ID(obj_name)</td> 
+    <td width="50%">Returns the identifier of the database object <b>obj_name</b>. Example:<br> SELECT OBJECT_ID('products') = 453576654</td> 
+   </tr> 
+   <tr> 
+    <td width="50%">OBJECTPROPERTY(obj_id,property)</td> 
+    <td width="50%">Returns the information about the objects from the current database.</td> 
+   </tr> 
+  </tbody>
+ </table>
+ <p>&nbsp;</p>
+ <hr>
+ <p><b>TABLE OF CONTENTS</b></p>
+ <ul class="noindent"> 
+  <li class="indentfix">Part 1: <a href="http://searchsqlserver.techtarget.com/feature/Basic-objects-of-T-SQL-in-SQL-Server-2008">The basic objects of T-SQL in SQL Server 2008</a></li> 
+  <li class="indentfix">Part 2: <a href="http://searchsqlserver.techtarget.com/feature/Using-T-SQL-data-types-in-SQL-Server-2008">Using T-SQL data types in SQL Server 2008</a></li> 
+  <li class="indentfix">Part 3: <b>SQL Server 2008 function types in T-SQL</b></li> 
+  <li class="indentfix">Part 4: <a href="http://searchsqlserver.techtarget.com/feature/Additional-T-SQL-operations-in-SQL-Server-2008">Additional T-SQL operations in SQL Server 2008</a></li> 
+ </ul>
+ <p><img alt="SQL Server 2008 Guide" src="./SQL Server 2008 function types in T-SQL_files/book_cover_abg_sql08.gif" height="129" width="100" align="left" hspace="5" vspace="5">This chapter excerpt from <i>Microsoft SQL Server 2008 : A Beginner's Guide</i> by Dusan Petkovic, is printed with permission from <a target="_blank" href="http://www.mhprofessional.com/category/?cat=112">McGraw-Hill Osborne Media</a>, Copyright 2008.</p>
+ <p>Click here for the <a target="_blank" href="http://cdn.ttgtmedia.com/searchSQLServer/downloads/SQL_Components_Ch4_SS2008.pdf">chapter download</a> or <a target="_blank" href="http://www.amazon.com/MICROSOFT-SERVER-BEGINNERS-Microsoft-Server/dp/0071546383/ref=si3_rdr_bb_product/103-9505736-1349401">purchase the book here</a>.</p>
+</section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="publish-date">
+	<div class="publish-date">
+		
+		
+			
+			
+				
+				
+					<span>This was last published in</span> <a href="http://searchsqlserver.techtarget.com/archive/2008/10">October 2008</a>
+				
+			
+				
+			
+			
+				
+	</div>
+	
+</section>
+<div class="ad-wrapper ad-inline ad-mobile">
+	<!-- AdsController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<div id="mobile-2" class="ad ad-mb"><script>GPT.display('mobile-2')</script></div></div></div><div><!-- DigDeeperController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<section class="section dig-deeper" id="dig-deeper" data-digdeeper-reference-id="43030b2fa9eb2210VgnVCM1000000d01c80aRCRD" data-menu-title="Dig Deeper">
+	<h4 class="section-title"><i class="icon" data-icon="m"></i>Dig Deeper on Microsoft SQL Server Performance Monitoring and Tuning</h4>
+	<div class="dig-deeper-nav-wrapper">
+		<ul class="dig-deeper-nav" id="dig-deeper-tabs" style="width: 558px;">
+			<li class="dig-deeper-nav-item selected" data-filtertype="all" data-page="1">
+								<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#dd-tab1">
+									All<i class="icon" data-icon="3"></i>
+								<span></span></a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="news_infotype" data-page="1">
+								<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#dd-tab2">
+									News<i class="icon" data-icon="3"></i>
+								<span></span></a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="get_started_infotype" data-page="1">
+								<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#dd-tab3">
+									Get Started<i class="icon" data-icon="3"></i>
+								<span></span></a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="evaluate_infotype" data-page="1">
+								<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#dd-tab4">
+									Evaluate<i class="icon" data-icon="3"></i>
+								<span></span></a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="manage_infotype" data-page="1">
+								<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#dd-tab5">
+									Manage<i class="icon" data-icon="3"></i>
+								<span></span></a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="problem_solve_infotype" data-page="1">
+								<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#dd-tab6">
+									Problem Solve<i class="icon" data-icon="3"></i>
+								<span></span></a>
+							</li>
+						</ul>
+	</div>
+	<div id="dig-deeper-tabs-content">
+		<div id="dd-tab1" style="display: block;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_all">
+						<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/How-to-set-up-the-SQL-Server-buffer-pool-extension-feature">How to set up the SQL Server buffer pool extension feature</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Comparing-memory-optimized-tables-and-disk-based-tables">Comparing memory-optimized tables and disk-based tables</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Five-tips-to-avoid-a-performance-bottleneck-or-other-SQL-Server-snares">Five tips to avoid a performance bottleneck or other SQL Server snares</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Dive-deep-into-SQL-Server-2014-in-memory-OLTP">Dive deep into SQL Server 2014 in-memory OLTP</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_all" style="">
+							Load More</button>
+					<noscript>
+						&lt;a href="http://searchsqlserver.techtarget.com/resources/Microsoft-SQL-Server-Performance-Monitoring-and-Tuning"&gt;
+									&lt;button class="button black-button dig-deeper-load-more" id="digDeeperViewAll"&gt;
+										View All&lt;/button&gt;
+								&lt;/a&gt;
+							</noscript>
+	
+				</div>
+			<div id="dd-tab2" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_news_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/news/2240145077/Microsoft-bulks-up-SQL-Server-scalability-to-rival-buff-competition">Microsoft bulks up SQL Server scalability to rival buff competition</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/news/2240035978/SQL-Server-BI-performance-for-the-uninitiated">SQL Server BI performance for the uninitiated</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/feature/New-Microsoft-products-focus-on-configuration-virtualization">Q&amp;A: New Microsoft products focus on configuration, virtualization</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/news/1166243/SQL-Server-2000-indexing-QA-to-create-and-tune-indexes">Q&amp;A: Create and tune indexes in SQL Server 2000</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_news_infotype" style="">
+							Load More</button>
+					<noscript>
+						&lt;a href="http://searchsqlserver.techtarget.com/info/news/Microsoft-SQL-Server-Performance-Monitoring-and-Tuning"&gt;
+									&lt;button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_news_infotype"&gt;
+										View All News&lt;/button&gt;
+								&lt;/a&gt;
+							</noscript>
+	
+				</div>
+			<div id="dd-tab3" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_get_started_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tutorial/Step-1-Invest-in-good-application-design">Step 1: Invest in good application design</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tutorial/Tutorial-Performance-tuning-SQL-Server-via-queries-indexes-and-more">Tutorial: Performance tuning SQL Server via queries, indexes and more</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tutorial/Tutorial-SQL-Server-indexing-tips-to-improve-performance">Tutorial: SQL Server indexing tips to improve performance</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tutorial/Tutorial-Learn-SQL-Server-basics-from-A-Z">Tutorial: Learn SQL Server basics from A-Z</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_get_started_infotype" style="">
+							Load More</button>
+					<noscript>
+						&lt;a href="http://searchsqlserver.techtarget.com/info/getstarted/Microsoft-SQL-Server-Performance-Monitoring-and-Tuning"&gt;
+									&lt;button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_get_started_infotype"&gt;
+										View All Get started&lt;/button&gt;
+								&lt;/a&gt;
+							</noscript>
+	
+				</div>
+			<div id="dd-tab4" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_evaluate_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Comparing-memory-optimized-tables-and-disk-based-tables">Comparing memory-optimized tables and disk-based tables</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/feature/New-Microsoft-products-focus-on-configuration-virtualization">Q&amp;A: New Microsoft products focus on configuration, virtualization</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/feature/Top-10-SQL-Server-Tips-of-2008">Top 10 SQL Server Tips of 2008</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Five-sqlcmd-features-to-automate-SQL-Server-database-tasks">Five sqlcmd features to automate SQL Server database tasks</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_evaluate_infotype" style="">
+							Load More</button>
+					<noscript>
+						&lt;a href="http://searchsqlserver.techtarget.com/info/evaluate/Microsoft-SQL-Server-Performance-Monitoring-and-Tuning"&gt;
+									&lt;button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_evaluate_infotype"&gt;
+										View All Evaluate&lt;/button&gt;
+								&lt;/a&gt;
+							</noscript>
+	
+				</div>
+			<div id="dd-tab5" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_manage_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/How-to-set-up-the-SQL-Server-buffer-pool-extension-feature">How to set up the SQL Server buffer pool extension feature</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Five-tips-to-avoid-a-performance-bottleneck-or-other-SQL-Server-snares">Five tips to avoid a performance bottleneck or other SQL Server snares</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Dive-deep-into-SQL-Server-2014-in-memory-OLTP">Dive deep into SQL Server 2014 in-memory OLTP</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Does-SQL-Server-database-size-affect-performance">Does SQL Server database size affect performance?</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_manage_infotype" style="">
+							Load More</button>
+					<noscript>
+						&lt;a href="http://searchsqlserver.techtarget.com/info/manage/Microsoft-SQL-Server-Performance-Monitoring-and-Tuning"&gt;
+									&lt;button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_manage_infotype"&gt;
+										View All Manage&lt;/button&gt;
+								&lt;/a&gt;
+							</noscript>
+	
+				</div>
+			<div id="dd-tab6" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_problem_solve_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Five-tips-to-avoid-a-performance-bottleneck-or-other-SQL-Server-snares">Five tips to avoid a performance bottleneck or other SQL Server snares</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Dive-deep-into-SQL-Server-2014-in-memory-OLTP">Dive deep into SQL Server 2014 in-memory OLTP</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Does-SQL-Server-database-size-affect-performance">Does SQL Server database size affect performance?</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="http://searchsqlserver.techtarget.com/tip/Defining-half-a-dozen-daily-SQL-Server-DBA-responsibilities">Defining half a dozen daily SQL Server DBA responsibilities</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_problem_solve_infotype" style="">
+							Load More</button>
+					<noscript>
+						&lt;a href="http://searchsqlserver.techtarget.com/info/problemsolve/Microsoft-SQL-Server-Performance-Monitoring-and-Tuning"&gt;
+									&lt;button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_problem_solve_infotype"&gt;
+										View All Problem solve&lt;/button&gt;
+								&lt;/a&gt;
+							</noscript>
+	
+				</div>
+			</div>
+</section>
+</div><div><!-- ProFeaturesController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div><div><!-- GuideController, generated at 07:58:25 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div><div><!-- DiscussionsController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div><div><!-- AskAnExpertController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div><div><!-- HaveAQuestionForAnExpertController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div><div><!-- EHandbookController, generated at 07:58:25 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+</div>
+</div></div>
+				<div id="content-right" class="content-right"></div>
+			</article>
+		</div>
+		<div><div><!-- CommentingController, generated at 08:00:47 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<section id="commenting" class="main-content comments-wrapper" data-comment-reference-id="43030b2fa9eb2210VgnVCM1000000d01c80aRCRD" data-itkerepo-id="268_post_45664">
+	<div class="content-columns">
+		<div class="content-left comments-left">
+			</div>
+				 
+		<div class="content-center comments-center">
+			<h4 class="section-title comments-header">
+				<i class="icon" data-icon="m"></i>
+				Start the conversation</h4>
+			
+			<h3 class="comments-count" style="display:none;">
+				<i class="icon" data-icon="z"></i>
+				<span class="comments-count-num">0</span>&nbsp;comments</h3>						
+			<form id="loggedoutCommentsForm" class="comments-form logged-out">
+				<div class="cleditorMain" style="width: 100%; height: 200px;"><div class="cleditorToolbar" style="height: 27px;"><div class="cleditorGroup" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Bold" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Italic" disabled="disabled" style="background-position: -24px center;"></div><div class="cleditorButton cleditorDisabled" title="Strikethrough" disabled="disabled" style="background-position: -72px center;"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Font" disabled="disabled" style="background-position: -144px center;"></div><div class="cleditorButton cleditorDisabled" title="Font Size" disabled="disabled" style="background-position: -168px center;"></div><div class="cleditorButton cleditorDisabled" title="Style" disabled="disabled" style="background-position: -192px center;"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Font Color" disabled="disabled" style="background-position: -216px center;"></div><div class="cleditorButton cleditorDisabled" title="Remove Formatting" disabled="disabled" style="background-position: -264px center;"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Bullets" disabled="disabled" style="background-position: -288px center;"></div><div class="cleditorButton cleditorDisabled" title="Numbering" disabled="disabled" style="background-position: -312px center;"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 25px;"><div class="cleditorButton cleditorDisabled" title="Insert Hyperlink" disabled="disabled" style="background-position: -576px center;"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 25px;"><div class="cleditorButton ttCleditorButton cleditorDisabled" title="Code" disabled="disabled"></div><div class="cleditorDivider"></div></div></div><textarea id="loggedoutCommentBody" class="comments-form-textarea" placeholder="Share your comment" style="border: none; margin: 0px; padding: 0px; display: none; width: 636px; height: 173px;"></textarea><iframe frameborder="0" src="javascript:true;" style="width: 636px; height: 173px;" src="./SQL Server 2008 function types in T-SQL_files/saved_resource(2).html"></iframe></div>
+				<fieldset class="notifications"> 
+					<input data-field="" id="notifications" name="notifications" checked="checked" type="checkbox">
+						Send me notifications when other members comment.</fieldset>
+				<button type="submit" class="comments-form-btn submit" href="#comments-reg-login">Add My Comment</button>
+				
+				<div style="display:none;">
+					<div id="comments-reg-login">
+					<section id="commenting-registration">
+						<div class="modal-register">
+							<h4>Register</h4>
+							<input class="comments-username" type="text" placeholder="Username">
+							<input class="comments-email" type="text" placeholder="email@techtarget.com">
+							<input class="comments-password" type="password" placeholder="Password">
+							<input id="submit-register" class="comments-form-btn" type="submit" value="Add My Comment">
+						</div>
+						<div class="modal-divider"></div>
+						<div class="modal-login">
+							<h4>Login</h4>
+							<input class="comments-email" type="text" placeholder="email@techtarget.com">
+							<input class="comments-password" type="password" placeholder="Password">
+							<a class="forgot-password" href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#forgotPasswordModal">Forgot your password?</a>
+							<input id="submit-login" class="comments-form-btn" type="submit" value="Add My Comment">
+							<div style="display:none;">													
+								<div id="forgotPasswordModal">
+									<section id="commenting-forgot-password">
+										<div id="forgotPasswordModalHeader">
+											<h4>Forgot your password?</h4>
+											<div id="forgotPasswordModalMessaging">
+												<span class="forgotPasswordModalIntro">No problem! Submit your e-mail address below. We'll send you an email containing your password.</span>
+											</div>
+										</div>		
+										
+											<input id="forgotPasswordModalFormMessage" name="email" tabindex="1" class="required" placeholder="email@techtarget.com">
+											<button type="submit" id="forgotPasswordModalFormSubmit" class="button primaryButton">Submit</button>
+										
+									</section>
+								</div>
+							</div>
+							<div style="display:none;">
+								<div id="forgotPasswordModalConfirm">
+									<div id="forgotPasswordModalHeader">
+										<h4>Your password has been sent to:<span class="email"></span></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p class="comments-disclaimer">By submitting you agree to receive email from TechTarget and its partners. If you reside outside of the United States, you consent to having your personal data transferred to and processed in the United States. <a href="http://www.techtarget.com/html/privacy_policy.html">Privacy</a></p>
+						</section>
+					</div>
+				</div></form>
+				<div style="display:none;">					
+					<div id="comments-reg-create">
+					<section id="commenting-registration">
+						<div class="comments-reg-create-body">
+							<h4>Please create a username to comment.</h4>
+							<input class="comments-create-username" type="text" placeholder="Create Username">
+							<input class="comments-form-btn" type="submit" value="Create Username and Add My Comment">
+						</div>
+					</section>
+					</div>
+				</div>
+					
+			
+			<div id="sort" style="display:none;">
+				<a id="sortByOldest" class="comments-order" href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Oldest&nbsp;<i class="icon" data-icon="5"></i></a>
+				<a id="sortByNewest" class="comments-order" href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" style="display: none;">Newest&nbsp;<i class="icon" data-icon="5"></i></a>		
+			</div>
+			
+			<div id="repoComments">
+			</div>
+			
+		</div>
+		<div class="content-right"></div>
+	</div>
+</section></div><div><!-- GoogleAdSenseController, generated at 07:58:58 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<div class="ad-wrapper body-pro-callout">
+		<div class="body-pro-callout-inner">
+			<!-- AdsController, generated at 07:58:58 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<div id="promo-2" class="ad ad-pr" data-google-query-id="CIXhmaiNytUCFcqJaAodB6kLCw"><script>GPT.display('promo-2')</script><div id="google_ads_iframe_/3618/sqlsrv/FEATURE_3__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/3618/sqlsrv/FEATURE_3" title="3rd party ad content" name="google_ads_iframe_/3618/sqlsrv/FEATURE_3" width="800" height="45" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./SQL Server 2008 function types in T-SQL_files/saved_resource(3).html"></iframe></div></div></div>
+	</div>
+<section class="main-content ads-by-google" id="ads-by-google">
+		<h2><a href="https://www.google.com/adsense/support/bin/request.py?contact=abg_afc">-ADS BY GOOGLE</a></h2>
+		<script async="" src="./SQL Server 2008 function types in T-SQL_files/adsbygoogle.js.download"></script>
+		<!-- Search Sites Responsive AFC -->
+		<ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-6050985421795229" data-ad-slot="8728364240" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent"><iframe width="1200" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:1200px;height:90px;" src="./SQL Server 2008 function types in T-SQL_files/saved_resource(4).html"></iframe></ins></ins></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</section>
+</div><div><!-- NetworkCoverageController, generated at 07:58:58 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<section class="latest-wrapper" id="network-coverage">
+		<nav class="latest-nav-wrapper">
+			<h2>Latest TechTarget <span class="latest-title">resources</span></h2>
+			<ul class="latest-nav">
+				<li>
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" class="latest-nav-item selected" data-item="1">
+							Business Analytics<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				<li>
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" class="latest-nav-item" data-item="2">
+							Data Center<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				<li>
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" class="latest-nav-item" data-item="3">
+							Data Management<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				<li>
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" class="latest-nav-item" data-item="4">
+							AWS<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				<li>
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" class="latest-nav-item" data-item="5">
+							Oracle<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				<li>
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" class="latest-nav-item" data-item="6">
+							Content Management<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				<li>
+						<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#" class="latest-nav-item" data-item="7">
+							Windows Server<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				</ul>
+		</nav>
+		<span class="latest-nav-mask before-mask"></span>
+		<span class="latest-nav-mask after-mask"></span>
+		<div class="latest-body">
+			<div class="latest-content" data-item="1">
+					<h2 class="searchbusinessanalytics">
+						<a href="http://searchbusinessanalytics.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">Business</span><span class="logo-2">Analytics</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="7"></i>
+										<h3 style="height: 180px;"><a href="http://searchbusinessanalytics.techtarget.com/ehandbook/Predictive-data-analytics-advances-businesses-ahead-of-the-game">Predictive data analytics advances businesses ahead of the game</a></h3>
+										<p>Predictive analytics can help companies identify trends and better understand customers. The potential business benefits are big,...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3 style="height: 180px;"><a href="http://searchbusinessanalytics.techtarget.com/tip/Ten-steps-to-start-using-predictive-analytics-algorithms-effectively">Ten steps to start using predictive analytics algorithms effectively</a></h3>
+										<p>A successful predictive analytics program involves more than deploying software and using it to analyze data. This set of steps ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3 style="height: 180px;"><a href="http://searchbusinessanalytics.techtarget.com/news/450423702/AI-analytics-expected-to-rise-along-with-management-complexity">AI analytics expected to rise, along with management complexity</a></h3>
+										<p>Growing use of artificial intelligence tools by businesses was the focal point of analytics and data management trends predicted ...</p>
+									</li>
+								</ul>
+				</div>
+			<div class="latest-content" data-item="2">
+					<h2 class="searchdatacenter">
+						<a href="http://searchdatacenter.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">Data</span><span class="logo-2">Center</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchdatacenter.techtarget.com/news/450423974/Azure-Stack-scale-limits-could-delay-launch-for-some-enterprises">Azure Stack scale limits could delay launch for some enterprises</a></h3>
+										<p>Azure Stack will bring the services of Azure public cloud into the enterprise data center when it goes GA in September, but ...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchdatacenter.techtarget.com/tip/Boost-application-resilience-to-keep-workloads-running">Boost application resilience to keep workloads running</a></h3>
+										<p>Increase application resiliency and availability for enterprise workloads through clustering, replication, snapshots, ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchdatacenter.techtarget.com/tip/How-to-convince-execs-they-need-HCI-products">How to convince execs they need HCI products</a></h3>
+										<p>Is your enterprise considering a move to HCI? Evaluate scalability, automation and cost concerns, and be ready to discuss them ...</p>
+									</li>
+								</ul>
+				</div>
+			<div class="latest-content" data-item="3">
+					<h2 class="searchdatamanagement">
+						<a href="http://searchdatamanagement.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">Data</span><span class="logo-2">Management</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchdatamanagement.techtarget.com/feature/Rising-database-security-threats-require-attention-and-action">Rising database security threats require attention -- and action</a></h3>
+										<p>Data management teams are asking more questions about data security, Gartner analyst Merv Adrian says. But new factors are ...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchdatamanagement.techtarget.com/tip/Database-protection-methods-expand-to-shield-data-from-attackers">Database protection methods expand to shield data from attackers</a></h3>
+										<p>Database vendors have beefed up the security tools in their software -- which is a good thing, because attackers are increasingly...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchdatamanagement.techtarget.com/news/450423630/Apache-Arrow-to-power-startup-Dremios-self-service-data-platform">Apache Arrow to power startup Dremio's self-service data platform</a></h3>
+										<p>Data management startup Dremio has aimed its Apache Arrow expertise at the problem of self-service data delivery. In-column ...</p>
+									</li>
+								</ul>
+				</div>
+			<div class="latest-content" data-item="4">
+					<h2 class="searchaws">
+						<a href="http://searchaws.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">AWS</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchaws.techtarget.com/news/450423991/Exec-Mark-Lohmeyer-talks-VMware-Cloud-on-AWS">Exec Mark Lohmeyer talks VMware Cloud on AWS</a></h3>
+										<p>Since AWS and VMware disclosed their partnership in 2016, customers have awaited details. Mark Lohmeyer of VMware discussed the ...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchaws.techtarget.com/tip/Development-teams-aim-to-find-AWS-Greengrass-IoT-match">Development teams aim to find AWS Greengrass IoT match</a></h3>
+										<p>Developers can create IoT capabilities with Greengrass, bringing AWS features into their on-premises cloud environments -- ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchaws.techtarget.com/tip/Compare-AWS-data-management-services-to-Google-Microsoft">Compare AWS data management services to Google, Microsoft</a></h3>
+										<p>AWS data management encompasses a long list of services that compete with Google and Azure, but it still could improve data ...</p>
+									</li>
+								</ul>
+				</div>
+			<div class="latest-content" data-item="5">
+					<h2 class="searchoracle">
+						<a href="http://searchoracle.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">Oracle</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchoracle.techtarget.com/news/450423887/Oracle-Cloud-apps-updated-as-Oracle-extends-EBS-support">Oracle Cloud apps updated as Oracle extends EBS support</a></h3>
+										<p>While Oracle Cloud apps are getting a new update, the company says it isn't leaving its on-premises EBS customers behind.</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchoracle.techtarget.com/tip/Migrate-an-Oracle-RAC-database-to-new-servers-with-zero-downtime">Migrate an Oracle RAC database to new servers with zero downtime</a></h3>
+										<p>Most organizations can't afford any downtime on their Oracle systems. Here's how to move RAC databases to new server nodes and ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchoracle.techtarget.com/tip/Take-control-of-your-Oracle-contracts-and-stop-fearing-Oracle">Take control of your Oracle contracts -- and stop fearing Oracle</a></h3>
+										<p>Dealing with Oracle on software contracts can seem like a scary task, but it doesn't have to be if you take control of the ...</p>
+									</li>
+								</ul>
+				</div>
+			<div class="latest-content" data-item="6">
+					<h2 class="searchcontentmanagement">
+						<a href="http://searchcontentmanagement.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">Content</span><span class="logo-2">Management</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchcontentmanagement.techtarget.com/feature/A-personalization-engine-comparison-Acquia-Evergage-and-Google">A personalization engine comparison: Acquia, Evergage, and Google</a></h3>
+										<p>A personalization engine can help provide a better customer experience. Expert Geoff Bock helps break down the differences ...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchcontentmanagement.techtarget.com/feature/Physical-records-management-here-to-stay-along-with-digital-records">Physical records management here to stay along with digital records</a></h3>
+										<p>Some organizations, because of audience or regulatory reasons, are stuck with paper indefinitely. Learn how three organizations ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchcontentmanagement.techtarget.com/feature/Digital-transformation-project-gives-historical-documents-new-life">Digital transformation project gives historical documents new life</a></h3>
+										<p>A nonprofit with deep roots describes how its digital transformation project turned thousands of documents chronicling a pivotal ...</p>
+									</li>
+								</ul>
+				</div>
+			<div class="latest-content" data-item="7">
+					<h2 class="searchwindowsserver">
+						<a href="http://searchwindowsserver.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">Windows</span><span class="logo-2">Server</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchwindowsserver.techtarget.com/news/450424146/No-patch-for-zero-day-SMB-exploit-for-August-Patch-Tuesday">No patch for zero-day SMB exploit for August Patch Tuesday</a></h3>
+										<p>Security researchers uncovered a new SMB vulnerability in July, but Microsoft feels most administrators who follow network ...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchwindowsserver.techtarget.com/tip/Configure-Windows-Storage-Spaces-to-serve-up-hot-data-fast">Configure Windows Storage Spaces to serve up hot data fast</a></h3>
+										<p>To avoid the high cost of a software-defined SAN, IT shops can turn on the tiered storage virtualization feature in newer ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="http://searchwindowsserver.techtarget.com/tip/Stand-up-infrastructure-on-a-budget-with-Azure-DevTest-Labs">Stand up infrastructure on a budget with Azure DevTest Labs</a></h3>
+										<p>Concerned with mounting costs and continual upkeep of application development environments? Shift test workloads to Azure cloud ...</p>
+									</li>
+								</ul>
+				</div>
+			</div>
+	</section>
+</div><div><!-- FooterLinksController, generated at 07:58:58 Wed Aug 9, 2017, by pv-vappma12.techtarget.com -->
+<footer id="page-footer">
+	<div class="content-left">
+		<!-- Plug in TechTarget Logo inside the anchor tag here. -->
+		<div class="column column-logo">
+			<a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#"></a>
+		</div>
+	</div>
+	<div class="content-center">
+		<ul class="column">
+			<li class="footer-item footer-item-col-1 footer-item-row-1"><a href="http://searchsqlserver.techtarget.com/about">About Us</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-2"><a href="http://searchsqlserver.techtarget.com/about/editors">Meet The Editors</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-3"><a href="http://searchsqlserver.techtarget.com/about/contact">Contact Us</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-4"><a href="http://www.techtarget.com/html/privacy_policy.html">Privacy Policy</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-5"><a href="http://searchsqlserver.techtarget.com/about/advertising">Advertisers</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-6"><a href="http://searchsqlserver.techtarget.com/about/partners">Business Partners</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-7"><a href="http://www.techtarget.com/mediakit">Media Kit</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-8"><a href="http://www.techtarget.com/">Corporate Site</a></li>
+			</ul>
+		<ul class="column">
+			<li class="footer-item footer-item-col-2 footer-item-row-1"><a href="http://searchsqlserver.techtarget.com/contributors">Contributors</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-2"><a href="http://reprints.ygsgroup.com/m/techtarget">Reprints</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-3"><a href="http://searchsqlserver.techtarget.com/archive">Archive</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-4"><a href="http://searchsqlserver.techtarget.com/sitemap">Site Map</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-5"><a href="http://searchsqlserver.techtarget.com/answers">Answers</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-6"><a href="http://searchsqlserver.techtarget.com/eproducts">E-Products</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-7"><a href="http://searchsqlserver.techtarget.com/events">Events</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-8"><a href="http://searchsqlserver.techtarget.com/features">Features</a></li>
+			</ul>
+		<ul class="column column-mobile-hidden">
+			<li class="footer-item footer-item-col-3 footer-item-row-1"><a href="http://searchsqlserver.techtarget.com/guides">Guides</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-2"><a href="http://searchsqlserver.techtarget.com/opinions">Opinions</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-3"><a href="http://searchsqlserver.techtarget.com/photostories">Photo Stories</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-4"><a href="http://searchsqlserver.techtarget.com/quizzes">Quizzes</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-5"><a href="http://searchsqlserver.techtarget.com/tips">Tips</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-6"><a href="http://searchsqlserver.techtarget.com/tutorials">Tutorials</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-7"><a href="http://searchsqlserver.techtarget.com/videos">Videos</a></li>
+			</ul>
+	</div>
+	<div class="content-right">
+		<div class="column column-legal">
+			<p class="footer-legal">All Rights Reserved, <span>
+			<a href="http://searchsqlserver.techtarget.com/about/copyright">Copyright 2005 - 2017</a>, TechTarget</span>
+			
+			</p>
+			
+		</div>
+	</div>
+</footer></div>
+</div><script src="./SQL Server 2008 function types in T-SQL_files/responsive-ui.min.js.download"></script><!-- Begin Chartbeat -->
+		<script>
+    var _sf_async_config={};
+    _sf_async_config.uid = 41935;
+    _sf_async_config.domain = 'techtargetnetwork.com';
+    _sf_async_config.sections = 'sqlsrv, sqlsrv - Microsoft SQL Server Administration';
+    _sf_async_config.authors = 'NO AUTHOR, FEATURE, sqlsrv - FEATURE';
+    _sf_async_config.useCanonical = true;
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement('script');
+        e.setAttribute('language', 'javascript');
+        e.setAttribute('type', 'text/javascript');
+        e.setAttribute('src',
+           (('https:' == document.location.protocol) ? 'https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/' : 'http://static.chartbeat.com/') + 'js/chartbeat.js');
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+         loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+</script><!-- End Chartbeat -->
+	<!-- Begin DataPoint Media -->
+		<script>
+(function() {
+var d=document,h=d.getElementsByTagName('head')[0],s=d.createElement('script'),sc = 'https:' == document.location.protocol ? 'https://' : 'http://';
+s.type='text/javascript';
+s.async=true;
+s.src=sc+'s.dpmsrv.com/dpm_b4c96d80854dd27e76d8cc9e21960eebda52e962.min.js';
+h.appendChild(s);
+})();
+</script><!-- End DataPoint Media -->
+	<!-- Begin CrazyEgg -->
+		<script>setTimeout(function(){
+var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0012/7034.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;
+a.type="text/javascript";
+b.parentNode.insertBefore(a,b)
+}, 1);</script><!-- End CrazyEgg -->
+	<!-- Begin GoogleRemarketing -->
+		<script>
+var google_conversion_id = 1070110249;
+var google_conversion_label = "RRsgCOW4tgMQqayi_gM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+</script>
+<script src="./SQL Server 2008 function types in T-SQL_files/conversion.js.download">
+</script><iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13" src="./SQL Server 2008 function types in T-SQL_files/saved_resource(5).html" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"></iframe>
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1070110249/?value=0&amp;label=RRsgCOW4tgMQqayi_gM&amp;guid=ON&amp;script=0"&gt;
+&lt;/div&gt;
+</noscript>
+<script>
+var google_conversion_id = 1072226410;
+var google_conversion_label = "x3P_CIql1gMQ6sCj_wM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+</script>
+<script src="./SQL Server 2008 function types in T-SQL_files/conversion.js.download">
+</script><img height="1" width="1" border="0" alt="" src="./SQL Server 2008 function types in T-SQL_files/saved_resource" style="display: none;">
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1072226410/?value=0&amp;label=x3P_CIql1gMQ6sCj_wM&amp;guid=ON&amp;script=0"&gt;
+&lt;/div&gt;
+</noscript><!-- End GoogleRemarketing -->
+	</div><div class="cleditorPopup cleditorList" style="display: none;"><div style="font-family: Arial;">Arial</div><div style="font-family: &quot;Arial Black&quot;;">Arial Black</div><div style="font-family: &quot;Comic Sans MS&quot;;">Comic Sans MS</div><div style="font-family: &quot;Courier New&quot;;">Courier New</div><div style="font-family: Narrow;">Narrow</div><div style="font-family: Garamond;">Garamond</div><div style="font-family: Georgia;">Georgia</div><div style="font-family: Impact;">Impact</div><div style="font-family: &quot;Sans Serif&quot;;">Sans Serif</div><div style="font-family: serif;">Serif</div><div style="font-family: Tahoma;">Tahoma</div><div style="font-family: &quot;Trebuchet MS&quot;;">Trebuchet MS</div><div style="font-family: Verdana;">Verdana</div></div><div class="cleditorPopup cleditorList" style="display: none;"><div><font size="1">1</font></div><div><font size="2">2</font></div><div><font size="3">3</font></div><div><font size="4">4</font></div><div><font size="5">5</font></div><div><font size="6">6</font></div><div><font size="7">7</font></div></div><div class="cleditorPopup cleditorList" style="display: none;"><div><p>Paragraph</p></div><div><h1>Header 1</h1></div><div><h2>Header 2</h2></div><div><h3>Header 3</h3></div><div><h4>Header 4</h4></div><div><h5>Header 5</h5></div><div><h6>Header 6</h6></div></div><div class="cleditorPopup cleditorColor" style="display: none;"><div style="background-color: rgb(255, 255, 255);"></div><div style="background-color: rgb(255, 204, 204);"></div><div style="background-color: rgb(255, 204, 153);"></div><div style="background-color: rgb(255, 255, 153);"></div><div style="background-color: rgb(255, 255, 204);"></div><div style="background-color: rgb(153, 255, 153);"></div><div style="background-color: rgb(153, 255, 255);"></div><div style="background-color: rgb(204, 255, 255);"></div><div style="background-color: rgb(204, 204, 255);"></div><div style="background-color: rgb(255, 204, 255);"></div><div style="background-color: rgb(204, 204, 204);"></div><div style="background-color: rgb(255, 102, 102);"></div><div style="background-color: rgb(255, 153, 102);"></div><div style="background-color: rgb(255, 255, 102);"></div><div style="background-color: rgb(255, 255, 51);"></div><div style="background-color: rgb(102, 255, 153);"></div><div style="background-color: rgb(51, 255, 255);"></div><div style="background-color: rgb(102, 255, 255);"></div><div style="background-color: rgb(153, 153, 255);"></div><div style="background-color: rgb(255, 153, 255);"></div><div style="background-color: rgb(187, 187, 187);"></div><div style="background-color: rgb(255, 0, 0);"></div><div style="background-color: rgb(255, 153, 0);"></div><div style="background-color: rgb(255, 204, 102);"></div><div style="background-color: rgb(255, 255, 0);"></div><div style="background-color: rgb(51, 255, 51);"></div><div style="background-color: rgb(102, 204, 204);"></div><div style="background-color: rgb(51, 204, 255);"></div><div style="background-color: rgb(102, 102, 204);"></div><div style="background-color: rgb(204, 102, 204);"></div><div style="background-color: rgb(153, 153, 153);"></div><div style="background-color: rgb(204, 0, 0);"></div><div style="background-color: rgb(255, 102, 0);"></div><div style="background-color: rgb(255, 204, 51);"></div><div style="background-color: rgb(255, 204, 0);"></div><div style="background-color: rgb(51, 204, 0);"></div><div style="background-color: rgb(0, 204, 204);"></div><div style="background-color: rgb(51, 102, 255);"></div><div style="background-color: rgb(102, 51, 255);"></div><div style="background-color: rgb(204, 51, 204);"></div><div style="background-color: rgb(102, 102, 102);"></div><div style="background-color: rgb(153, 0, 0);"></div><div style="background-color: rgb(204, 102, 0);"></div><div style="background-color: rgb(204, 153, 51);"></div><div style="background-color: rgb(153, 153, 0);"></div><div style="background-color: rgb(0, 153, 0);"></div><div style="background-color: rgb(51, 153, 153);"></div><div style="background-color: rgb(51, 51, 255);"></div><div style="background-color: rgb(102, 0, 204);"></div><div style="background-color: rgb(153, 51, 153);"></div><div style="background-color: rgb(51, 51, 51);"></div><div style="background-color: rgb(102, 0, 0);"></div><div style="background-color: rgb(153, 51, 0);"></div><div style="background-color: rgb(153, 102, 51);"></div><div style="background-color: rgb(102, 102, 0);"></div><div style="background-color: rgb(0, 102, 0);"></div><div style="background-color: rgb(51, 102, 102);"></div><div style="background-color: rgb(0, 0, 153);"></div><div style="background-color: rgb(51, 51, 153);"></div><div style="background-color: rgb(102, 51, 102);"></div><div style="background-color: rgb(0, 0, 0);"></div><div style="background-color: rgb(51, 0, 0);"></div><div style="background-color: rgb(102, 51, 0);"></div><div style="background-color: rgb(102, 51, 51);"></div><div style="background-color: rgb(51, 51, 0);"></div><div style="background-color: rgb(0, 51, 0);"></div><div style="background-color: rgb(0, 51, 51);"></div><div style="background-color: rgb(0, 0, 102);"></div><div style="background-color: rgb(51, 0, 153);"></div><div style="background-color: rgb(51, 0, 51);"></div></div><div class="cleditorPopup cleditorPrompt" style="display: none;"><label>Enter URL:<br><input type="text" value="http://" style="width:200px"></label><br><input type="button" value="Submit"></div><div class="cleditorPopup cleditorPrompt" style="display: none;">Paste the code:<br><textarea cols="40" rows="3"></textarea><br><input type="button" value="Ok"></div>
+	<div id="mobile-sidebars" class="mobile-sidebars">
+		<nav id="chapters-bar-menu" class="chapters-bar mobile-chapters-bar" data-required-item="section.main-article-chapter" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;">
+	<div class="chapters-bar-header">
+		<i class="icon" data-icon="1"></i>Sections</div>
+	<ul class="chapters-bar-list"><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Aggregate functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Scalar functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Numeric functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Date Functions</a></li><li class="chapters-bar-item selected"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">String Functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">System Functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Metadata Functions</a></li><li class="chapters-bar-item"><a href="http://searchsqlserver.techtarget.com/feature/SQL-Server-2008-function-types-in-T-SQL#">Dig Deeper</a></li></ul>
+</nav><aside class="resources-bar mobile-resources-bar" id="resources-bar">
+		<div><!-- VendorResourcesController, generated at 08:54:24 Tue Aug 8, 2017, by pv-vappma12.techtarget.com -->
+<div class="resources-bar-header"><i class="icon" data-icon="l"></i>Sponsored News</div>
+			<ul class="resources-bar-list sponsored-news">
+				<li class="resources-bar-item">
+						<a href="http://searchcio.techtarget.com/ibmcommerce/Leveraging-the-Cloud-for-B2B-Integration-Excellence?asrc=SS_sqlsrv_SN-1327000">Leveraging the Cloud for B2B Integration Excellence</a>
+						<span>–IBM</span>
+					</li>
+				<li class="resources-bar-item">
+						<a href="http://searchcio.techtarget.com/ibmcommerce/Improve-Security-with-Managed-File-Transfer?asrc=SS_sqlsrv_SN-1327000">Improve Security with Managed File Transfer</a>
+						<span>–IBM</span>
+					</li>
+				<li class="resources-bar-item see-more"><a href="http://searchsqlserver.techtarget.com/sponsored_communities">See More</a></li>
+				</ul>
+		<div class="resources-bar-header"><i class="icon" data-icon="l"></i>Vendor Resources</div>
+		<ul class="resources-bar-list" id="vendorResourcesSplash">
+			<li class="resources-bar-item">
+					<a href="http://searchsqlserver.bitpipe.com/detail/RES/1383316450_228.html">Hands-on Oracle Application Express security</a>
+					<span>–ComputerWeekly.com</span>
+					<i class="icon" data-icon=""></i>
+				</li>
+			</ul>
+</div></aside></div>
+	<div id="image-overlay" class="image-overlay">
+		<div class="image-overlay-img"></div>
+		<div class="image-overlay-close">Close</div>
+	</div>
+	
+<!--
+Component Load Times
+====================
+DefaultPageController=54 ms
+PinnedNavBarController=18 ms
+AdsController=0 ms
+RelatedContentController=85 ms
+EzinePromoController=2 ms
+ContentItemController=73 ms
+DigDeeperController=66 ms
+ProFeaturesController=7 ms
+DiscussionsController=0 ms
+AskAnExpertController=0 ms
+HaveAQuestionForAnExpertController=0 ms
+CommentingController=6 ms
+
+Total time=311 ms
+Request Serving Server: pv-vappma12.techtarget.com
+-->
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" + "js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","bam.nr-data.net","1068cf12f6","313780","ZQMAYxdYXUBSAkFbClxJLFgXVFJfWhtQVjBAD00dSl9WUkcUR1dKGA==",0,508,new Date().getTime(),"","","","",""]);</script>
+
+<script id="f5_cspm">(function(){var f5_cspm={f5_p:'PPKBCHFMBKGHGHFLJBOLBAHPCMDALCACBGEMBKOPHFMIDPKNCIELFNMGAEGHDGMMKFEBMNNFAAFJNMEFOLAALOOCAAIAOADPDDEOCFNOEKIHKCFPNPEOIHCDMHLPOIAG',setCharAt:function(str,index,chr){if(index>str.length-1)return str;return str.substr(0,index)+chr+str.substr(index+1);},get_byte:function(str,i){var s=(i/16)|0;i=(i&15);s=s*32;return((str.charCodeAt(i+16+s)-65)<<4)|(str.charCodeAt(i+s)-65);},set_byte:function(str,i,b){var s=(i/16)|0;i=(i&15);s=s*32;str=f5_cspm.setCharAt(str,(i+16+s),String.fromCharCode((b>>4)+65));str=f5_cspm.setCharAt(str,(i+s),String.fromCharCode((b&15)+65));return str;},set_latency:function(str,latency){latency=latency&0xffff;str=f5_cspm.set_byte(str,40,(latency>>8));str=f5_cspm.set_byte(str,41,(latency&0xff));str=f5_cspm.set_byte(str,35,2);return str;},wait_perf_data:function(){try{var wp=window.performance.timing;if(wp.loadEventEnd>0){var res=wp.loadEventEnd-wp.navigationStart;if(res<60001){var cookie_val=f5_cspm.set_latency(f5_cspm.f5_p,res);window.document.cookie='f5avr0289503796aaaaaaaaaaaaaaaa='+encodeURIComponent(cookie_val)+';path=/';}
+return;}}
+catch(err){return;}
+setTimeout(f5_cspm.wait_perf_data,100);return;},go:function(){var chunk=window.document.cookie.split(/\s*;\s*/);for(var i=0;i<chunk.length;++i){var pair=chunk[i].split(/\s*=\s*/);if(pair[0]=='f5_cspm'&&pair[1]=='1234')
+{var d=new Date();d.setTime(d.getTime()-1000);window.document.cookie='f5_cspm=;expires='+d.toUTCString()+';path=/;';setTimeout(f5_cspm.wait_perf_data,100);}}}}
+f5_cspm.go();}());</script><img src="./SQL Server 2008 function types in T-SQL_files/activity.gif" class="track"><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><script type="text/javascript" id="">function inlineEventHandler(){var a=Array.prototype.slice.call(arguments);dataLayer.push({eventCategory:a[0],eventAction:a[1],eventLabel:a[2],eventValue:a[3],eventNoninteraction:a[4]});dataLayer.push({event:"gaInlineRegistrationJsEvent"})}var inlineFullRegSubmittedCookie="tt.gtm.inlinereg.fullReg.submitted";
+~document.cookie.indexOf(inlineFullRegSubmittedCookie+"\x3d")&&(inlineEventHandler("Inline Registration","Successful Full Registration","Full Registration Form",null,!0),document.cookie=inlineFullRegSubmittedCookie+"\x3d; expires\x3dThu, 01 Jan 1970 05:00:00 GMT; path\x3d/");
+0<$("#inlineRegistration").length&&($("#inlineRegistration").on("click",".inlineReg_p1 .callToAction a",function(){inlineEventHandler("Inline Registration","Log In Link Click","Partial Registration Form",null,!1)}),$("#inlineRegistration").on("click",".inlineReg_p2 .callToAction a",function(){inlineEventHandler("Inline Registration","Log In Link Click","Full Registration Form",null,!1)}),$("#inlineRegistration").on("click",".inlineReg_p1 .inlineRegLoginErrMsg",function(){inlineEventHandler("Inline Registration",
+"Log In Link Click","Partial Registration Form",null,!1)}),$("#inlineRegistration").on("click",".inlineReg_p2 .inlineRegLoginErrMsg",function(){inlineEventHandler("Inline Registration","Log In Link Click","Full Registration Form",null,!1)}),$("#inlineRegistration").on("tt.inlinereg.emailOnly.error",function(){inlineEventHandler("Inline Registration","Partial Registration Error","Partial Registration Form",null,!0)}),$("#inlineRegistration").on("tt.inlinereg.emailOnly.submit",function(){inlineEventHandler("Inline Registration",
+"Submit Partial Registration","Partial Registration Form",null,!1)}),$("#inlineRegistration").on("tt.inlinereg.fullReg.load",function(){inlineEventHandler("Inline Registration","Full Registration Form Load","Full Registration Form",null,!0)}),$("#inlineRegistration").on("tt.inlinereg.fullReg.error",function(){inlineEventHandler("Inline Registration","Full Registration Error","Full Registration Form",null,!0)}),$("#inlineRegistration").on("tt.inlinereg.fullReg.submit",function(){inlineEventHandler("Inline Registration",
+"Submit Full Registration","Full Registration Form",null,!0);document.cookie=inlineFullRegSubmittedCookie+"\x3d1; path\x3d/"}));</script><script type="text/javascript" id="">(function(){var a=document.createElement("script");a.src="http://cdn.ttgtmedia.com/rms/ux/javascript/advertisement.js";document.head.appendChild(a)})();</script><img alt="" style="display:none;width:1px;" src="./SQL Server 2008 function types in T-SQL_files/423396.gif"><img alt="" style="display:none;width:1px;" src="./SQL Server 2008 function types in T-SQL_files/seg"><img alt="" width="1" height="1" style="display:none;width:1px;" src="./SQL Server 2008 function types in T-SQL_files/img"><script type="text/javascript" src="./SQL Server 2008 function types in T-SQL_files/nr-100.js.download"></script><script language="javascript" type="text/javascript" src="./SQL Server 2008 function types in T-SQL_files/chartbeat.js.download"></script><script type="text/javascript" src="./SQL Server 2008 function types in T-SQL_files/1068cf12f6"></script><img alt="" style="display:none;width:1px;" src="./SQL Server 2008 function types in T-SQL_files/seg(1)"></body></html>
