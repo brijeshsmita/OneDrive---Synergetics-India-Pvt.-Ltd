@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="License String">RUREODhETzE2ZWU3N2VyekltbTAwbWEwa29vNDRvYy1oAAA5OSBsMHIAADIyNGU1dwAAMDAuADFBAAA2NjEAAE4AADg4MAAAVAAANDQAAAB2AAAzMwAAAGIAADk5AAAAbwAANDQAAABOAAA3NwAAAHoAAGNjAAAASQAAYWEAAABvAABhYQAAADUAAGFhAAAAOQAAMDAAAABPAAA5OQAAAE0AADMzAAAAZwAAZGQAAAA9AABkZAAAAD0AADc3AAAAAAAAZmYAAAA=</entry>
+<entry key="Font Face">Arial</entry>
+<entry key="Questions in test">50</entry>
+<entry key="CAS Underline">N</entry>
+<entry key="CAS Italic">N</entry>
+<entry key="Item Optimizer">N</entry>
+<entry key="Prompt on remove history">Y</entry>
+<entry key="Proxy authenticate">N</entry>
+<entry key="Correct color">-16711936</entry>
+<entry key="Network use proxy">N</entry>
+<entry key="Keyword 5"/>
+<entry key="CAS Bold">N</entry>
+<entry key="Proxy user"/>
+<entry key="Keyword 4"/>
+<entry key="Keyword 3"/>
+<entry key="CQS Bold">N</entry>
+<entry key="Keyword 2"/>
+<entry key="Custom Question Style">N</entry>
+<entry key="Select type Single Choice">Y</entry>
+<entry key="Keyword 1"/>
+<entry key="Keyword 0"/>
+<entry key="Prompt on close">N</entry>
+<entry key="Select keywords">N</entry>
+<entry key="Proxy port"/>
+<entry key="Prompt on finish test">Y</entry>
+<entry key="Passing score">85</entry>
+<entry key="Item Optimizer Mode">NotAnswered</entry>
+<entry key="Incorrect color">-65536</entry>
+<entry key="Show answers">Y</entry>
+<entry key="Select notes">N</entry>
+<entry key="CQS Underline">N</entry>
+<entry key="Custom Answer Style">N</entry>
+<entry key="Item Optimizer Correct Count">0</entry>
+<entry key="Version">Demo 4.10</entry>
+<entry key="Show answers when">OnClick</entry>
+<entry key="Select from topic">All</entry>
+<entry key="Proxy pass"/>
+<entry key="Select from type">All</entry>
+<entry key="Vendor">Oracle</entry>
+<entry key="Network use browser">Y</entry>
+<entry key="Test time">90</entry>
+<entry key="CQS Italic">N</entry>
+<entry key="Select type Interactive">Y</entry>
+<entry key="Font Size">12</entry>
+<entry key="Code">1z0-051</entry>
+<entry key="Proxy host"/>
+<entry key="Select type Multiple Choice">Y</entry>
+<entry key="Item Optimizer Incorrect Count">0</entry>
+</properties>
